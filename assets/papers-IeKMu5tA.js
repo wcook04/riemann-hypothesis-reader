@@ -1,2 +1,0 @@
-import{t as e}from"./site-C7KBSTG3.js";var t=e.paperNames,n=e.stages??[`expository`,`short`,`long`],r=e.library?.external??[],i={expository:`the exposition`,short:`the short paper`,long:`the long record`};function a(e){let t=n.filter(t=>e.includes(t)).map(e=>i[e]);return t.length===0?``:`In ${t.length===1?t[0]:`${t.slice(0,-1).join(`, `)} and ${t[t.length-1]}`}`}export{a,n as i,r as n,t as r,i as t};
-//# sourceMappingURL=papers-IeKMu5tA.js.map

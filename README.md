@@ -14,6 +14,6 @@ Click a highlighted passage to open its Lean declaration. The Graph tab follows 
 
 ## Build and hosting
 
-This repository contains the generated GitHub Pages edition. The reader, passage mappings, and build instructions are in Lean Exposition. The generated site links to the pinned sources and does not bundle the upstream Lean files. [Source and build instructions](https://github.com/wcook04/lean-exposition/blob/c0f457bade435d646e2f5f244dcd5ebca67073ac/docs/web-api.md#connect-the-library-reader)
+This repository contains the generated GitHub Pages edition. The reader, passage mappings, and build instructions are in Lean Exposition. The generated site links to the pinned sources and does not bundle the upstream Lean files. [Source and build instructions](https://github.com/wcook04/lean-exposition/blob/b53701f10049dc963d9ae4569a4272006b7cfda8/docs/web-api.md#connect-the-library-reader)
 
 The reader software is under [Apache 2.0](LICENSE.txt). See [NOTICE](NOTICE.txt) and [third-party notices](THIRD_PARTY_NOTICES.md) for credits.
