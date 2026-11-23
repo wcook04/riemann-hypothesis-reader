@@ -2,7 +2,7 @@
 
 > The argument of a formal proof of the Riemann Hypothesis, by Qui Vincit and Fable, read beside its Lean. The paper by Qui Vincit and Fable is shared under CC-BY-4.0.
 
-An AI agent compared selected passages with the pinned Lean. The comparisons are source readings. Lean kernel checks are reported separately.
+Select a highlighted passage to see the corresponding Lean and what the passage does in the argument. AI-assisted comparisons describe how the paper and Lean statements line up. What ran links to the recorded archive checks.
 
 ## Read
 

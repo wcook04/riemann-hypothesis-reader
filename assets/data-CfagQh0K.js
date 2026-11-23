@@ -1,0 +1,1 @@
+export{c as fetchModule,p as shellResource}from"./data-zW8Otrts.js";
