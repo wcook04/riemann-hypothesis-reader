@@ -1,2 +1,0 @@
-var e=-1/0;if(typeof window<`u`)for(let t of[`pointerdown`,`keydown`])window.addEventListener(t,()=>e=performance.now(),{capture:!0,passive:!0});var t=6e3;function n(){return performance.now()-e}export{n,t};
-//# sourceMappingURL=readerInput-tMM_8oNw.js.map
