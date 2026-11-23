@@ -1,0 +1,15 @@
+# The argument of a formal proof of the Riemann Hypothesis
+
+> The argument of a formal proof of the Riemann Hypothesis, by Qui Vincit and Fable, read beside its Lean. The paper by Qui Vincit and Fable is shared under CC-BY-4.0.
+
+An AI agent compared selected passages with the pinned Lean. The comparisons are source readings. Lean kernel checks are reported separately.
+
+## Read
+
+- [The argument of a formal proof of the Riemann Hypothesis](https://wcook04.github.io/riemann-hypothesis-reader/)
+
+## Data
+
+All data is static JSON under https://wcook04.github.io/riemann-hypothesis-reader/edition/. Start at edition/index.json: it maps API routes to files.
+
+The Lean index has 92 modules and 146 declarations.

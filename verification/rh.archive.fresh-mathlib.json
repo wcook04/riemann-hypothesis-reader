@@ -1,0 +1,30 @@
+{
+  "command": [
+    "bash",
+    "independent.sh",
+    "fresh"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "The two runs target Mathlib modules. The archive's Main has a larger import closure.",
+  "id": "rh.archive.fresh-mathlib",
+  "logs": [
+    {
+      "path": "verify/results/independent-fresh.txt",
+      "sha256": "2b045c293f9d5ab765fdd4a1fe6fa31599e6eea60a95312efb758daf1e9effad",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/independent-fresh.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "Both Mathlib module runs exited with code 0",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "lean4lean checked the import closures of Mathlib's RiemannZeta and DirichletContinuation modules.",
+  "status": "passed",
+  "tool": "lean4lean fresh checks on Mathlib",
+  "where": "The paper authors’ archive run"
+}

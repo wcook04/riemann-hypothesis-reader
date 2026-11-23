@@ -1,0 +1,30 @@
+{
+  "command": [
+    "lake",
+    "build",
+    "Main"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "The community import shown in this reader is a separate build.",
+  "id": "rh.archive.build",
+  "logs": [
+    {
+      "path": "verify/results/build-summary.txt",
+      "sha256": "03f380c614a64bf29e8f44bbb66c356acb6430305cc76e49d98aed2c076f39e7",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/build-summary.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "Lake exited with code 0",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "The authors compiled the archive's Main with Mathlib built from source.",
+  "status": "passed",
+  "tool": "Lean archive build",
+  "where": "The paper authors’ archive run"
+}

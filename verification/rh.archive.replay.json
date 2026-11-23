@@ -1,0 +1,66 @@
+{
+  "command": [
+    "bash",
+    "replay.sh"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "The replay skipped 5,840 unsafe or partial constants. The community import shown in this reader is a separate build.",
+  "id": "rh.archive.replay",
+  "logs": [
+    {
+      "path": "verify/results/replay-summary.txt",
+      "sha256": "73d81c0055930e1760322131dddb81e61d7c89837d1e57a143f8d85cf670efb7",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-summary.txt"
+    },
+    {
+      "path": "verify/results/replay-provenance.txt",
+      "sha256": "7941a420518072d18f933dfb57bfa102fa798e68d84782e25cb35519e895f378",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-provenance.txt"
+    },
+    {
+      "path": "verify/results/replay-targets.txt",
+      "sha256": "faad0eaf4d9a6d7a0f8e25d86be5a3340c7ca076e035c41e6c7da88046f22898",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "The replay reported 2,695,298 constants replayed and zero failures",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "The authors replayed the eligible constants in the import closure of the archive's Main.",
+  "status": "passed",
+  "targets": [
+    {
+      "name": "riemannHypothesis",
+      "record": "lean.c7d55f018299eab5ea1f4aaf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt#L1"
+    },
+    {
+      "name": "riemannZeta_eq_zero_re",
+      "record": "lean.bb161710466fe8c174a674fa",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt#L2"
+    },
+    {
+      "name": "LFunction_ne_zero_of_half_lt_re",
+      "record": "lean.bfe4cbf575504e78f17bc8df",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt#L3"
+    },
+    {
+      "name": "LFunction_eq_zero_re",
+      "record": "lean.c9295aaec00b94bd2ebe9e83",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt#L4"
+    },
+    {
+      "name": "LFunction_eq_zero_re_of_isPrimitive",
+      "record": "lean.bf9e375e2e8dffe86b8fe4cc",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/replay-targets.txt#L5"
+    }
+  ],
+  "tool": "Authors’ kernel replay of Main",
+  "where": "The paper authors’ archive run"
+}

@@ -1,0 +1,36 @@
+{
+  "command": [],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "The memory limit interrupted the check of the PlaneCoefficients module prefix in both runs.",
+  "id": "rh.archive.sample",
+  "logs": [
+    {
+      "path": "verify/results/sample-summary.txt",
+      "sha256": "1fbd9212fa07882b738ebd5439c04df6dd4ab4252a7d4584974fb11f3ced1b6e",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/sample-summary.txt"
+    },
+    {
+      "path": "verify/results/independent-sample-summary.txt",
+      "sha256": "02f5db6ab7c572f2009ae604fe8daa00959e9c81fdcfed2d2a2ab6fc34dc0266",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/independent-sample-summary.txt"
+    },
+    {
+      "path": "verify/results/sample-alone.txt",
+      "sha256": "0b2265b884a9663604ba5a88832564a9c450e14b838e0639d51417832af566de",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/sample-alone.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "Each checker accepted 500 of 501 sampled names and ran out of memory on the remaining name",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "Both checkers recorded acceptance on 500 names, including Main.",
+  "status": "unavailable",
+  "tool": "Sample runs by both checkers",
+  "where": "The paper authors’ archive run"
+}

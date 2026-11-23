@@ -1,0 +1,35 @@
+{
+  "command": [
+    "leanchecker",
+    "--fresh",
+    "Main"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "The community import shown in this reader is a separate build.",
+  "id": "rh.archive.fresh-main",
+  "logs": [
+    {
+      "path": "verify/results/fresh-main/stock.txt",
+      "sha256": "4f9b4cfad1e7415b5bebdd1d10432edf9c281e2a66cb64eef4203c402d08ffbf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/fresh-main/stock.txt"
+    },
+    {
+      "path": "verify/results/fresh-main/stock-fresh-Main.log.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/fresh-main/stock-fresh-Main.log.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "Lean’s own checker exited with code 0",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "Lean ran in fresh mode over the archive's Main import closure.",
+  "status": "passed",
+  "tool": "Lean’s fresh replay of Main",
+  "where": "The paper authors’ archive run"
+}

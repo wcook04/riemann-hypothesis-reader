@@ -1,0 +1,4517 @@
+{
+  "schema": 1,
+  "paper_revision": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "lean_revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+  "notes": {
+    "Deduction.zeroFree_of_rpow_window": {
+      "text": "The positive weights in the family\n\n[read] `CharFamily` (`Development/AutomorphicArithmetic/DedekindLFunctions/CharFamily.lean:24`) has only `a i > 0` and `N i = 1 ∨ χ i ≠ 1`: no coefficient positivity.\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Deduction.landau_window": {
+      "text": "The two cases of the pole argument\n\n4. [read] `landau_dichotomy`: given ρ₀ ∈ Z with Re ρ₀ > θ, either (a) B(σ, D), D ≤ σ − θ, is pole-free while some pole has σ − Re ρ₁ < D, or (b) the nearest pole to σ is a real β > θ, alone in B(σ, r), σ − β < r ≤ σ − θ.\n\nQui Vincit and Fable · CC-BY-4.0\n\nWhy the argument is windowed\n\n[inferred] Only T_k with k → ∞ are used, each seeing g through a kernel centred near u ≈ (1 + δ/2)U, so one window per k, beyond every point, suffices. The off-window mass must fall below σ^{−k} although |g| may reach C₀e^{2u}; tilting achieves this only if the window's log-length δU is proportional to U, and then σ ≈ 36/δ², which blows up as δ → 0. Windows [Y, CY] would fail; any fixed λ > 1 works.\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Formalism.HN.TheoremF": {
+      "text": "Theorem F and its sharper form\n\nStatement. `TheoremF` (StatementFrameF.lean:26) and `TheoremFSharp` (:64) have identical hypotheses (third reading §10). [read] Their conclusions are\n\n    s - log |I| - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- F\n    s           - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- FSharp\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.key_identity5": {
+      "text": "Where the two main terms agree\n\n- `key_identity` (`Formalism/RankGapBounds/RankGapProofs/WeightedMeanData.lean:170`) and `key_identity5` (`Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean:105`): SDiv − sumA·Lam5 + m·sumA·lg = Main(u0) + sumA·cCount(La + m²La/k), exactly. Here Lam5 is `Count5`'s lower bound for log T. proved-by\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "UpperTheory.Top.VVle": {
+      "text": "What the cohomological length measures\n\n- `Sha D e` is `Sha1 (qzTw D e)`. These are the classes in H¹(G_S, ℚ_ℓ/ℤ_ℓ(−e)) over E that are trivial at every place above ℓ; S is the set of those places. `shaLen` is the ℤ_ℓ-length (`Formalism/GaloisCohomology/Statement.lean:54–78`). read\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at": {
+      "text": "Where the congruence bound comes from\n\n- `IsRankRPart` (BS:57) says r_π ⊗ K ≅ ρ ⊕ ⊕_{c=1}^t χ_c. read\n- `sPi` (BS:71) is the length of a Bloch–Kato Selmer group of ρ ⊗ χ₁⁻¹ with values in (K/O)^r (`selPi`, QH:380). read\n- It is proved in `NLinkE.main_alt_alt` (TPS/AdmissibleParameterEventually.lean:30) by `congruenceBound_extended_of_rationalBound ∘ globalCongruenceCount_of_rootDifference_unit`. proved-by\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "UpperTheory.Top.supplyChi": {
+      "text": "The construction behind supplyChi\n\n[proved-by] `supplyChi : ∀ ψ, VWinAt ψ 401 → HostExW (3/2) (GChi ψ).req` (`CharacterBoxes/SupplyChi.lean:8`), proved as `supplyOfAdm` (`CharacterBoxes/HostOfField.lean:17`). That is `supplyOfAdmOf hostOfField` fed with `admissibleClassesTwistedChar` (`CoprimeRanks/AdmChi.lean:13`). The latter gives ranks with `RankVal` and `admitted R H0`: every choice of level data extends H0 to a `Host` (`CharacterBoxes/Imports.lean:9`). [read] `hostOfField` (`HostOfField.lean:8`) takes `PairWin s Y`, `PairGood M ε Y x q d`, `FieldRows` and `admitted`. It returns a host H ⊇ H0 satisfying `HostGood s C8 4 c6 Cb H q0` and `Shares H.TT (x^{−1+ε})`. `supplyOfAdmOf` (`ShortNorms/supplyOfAdmOf.lean:13`) combines it with `fieldChi`, `winPairs` (which calls `QH.pairEx`) and `boundedTw`.\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "UpperTheory.Top.PairEx": {
+      "text": "The two prime choices\n\n`PairEx` (:28) says: for all M ≥ 1, ε < 1/52 and A ≥ 1 there is Y1 such that every Y ≥ Y1 has q, d with `PairGood M ε Y (Y^A) q d`. [proved-by] `QH.pairEx` (`MeanSquareBounds/pairEx.lean:112`).\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Formalism.MainNotions.LocalQuadraticParts.adm2": {
+      "text": "The exact integrality statement\n\n- `adm2 D L` (`Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean:206`) says: for every word u, place w, φ ∈ `L.NuLat u`, and every F ∈ `Mtilde(muAt w)` that also lies in `V0(muAt w)`, the period `perCol u (muAt w) (jN u φ) F` equals `embLL y` for some y with y = 0 or `⌊ur D w (L.sg u w)⌋ ≤ vAdd (plEq w) y`. read `UnroundedValuationBound` (:212) states the same bound without the floor, and `valuation_bound_of_unrounded` (:218) derives `adm2` from it. read\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Formalism.HN.frameB_share": {
+      "text": "How the cut rank is bounded\n\n2. *Corank share (Markov).* Let x_ij be the normalised HN slopes of N_i minus h_i. [proved-by] Their rank-weighted mean is ≥ s, and each is ≤ s + u (by hypothesis and HNExtreme). [proved-by] `frameB_share` (HNP/FrameHermSharpB.lean:25) concludes #{x_ij < s − τ} ≤ (Σ m_i)·u/(u+τ). [proved-by] Combined with `frameB_count_lt`, this becomes `hcor`. [proved-by] It states that the steps Nt(τ,i) = hnStep(N_i, level s−τ+h_i) satisfy Σ_i(rk N_i − rk Nt) ≤ (u/(u+τ))·Σ_i rk N_i. [proved-by]\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "UpperTheory.Top.divinN_of_hypV": {
+      "text": "Where the proof spends the cohomological bound\n\n- `divinN_of_hypV` (`DivinNOfHypV.lean:117`). proved-by\n  - `vvRecord` (:17) extracts three facts from `HypV`: `ShaFinOdd`, which discharges the premise of `LinkN`; `Summable`, the premise of `LinkN_at`; and Σ'vvTerm ≤ √b.\n  - The third is weakened by `Real.sqrt_le_self_iff` to Σ'vvTerm ≤ b.\n  - In `divinN_at` (:76), `linarith` closes the goal using hb : Σ' ≤ b together with b ≤ B0 and B0 ≤ x^ε(B0+Nc). So the bound is used, but only in this weaker form.\n\nQui Vincit and Fable · CC-BY-4.0"
+    },
+    "Formalism.LFunctionChainParameters.LChain.SizeData₂": {
+      "text": "Where ChainTied gets the eleven clauses\n\n- [R] `ChainTied` (`GSB/TieGlobal.lean:97`) demands `LChain.SizeData₂ Dd C Xpp` (`SWB/SChain.lean:17`) `:= HidaSetting ∧ DIV ∧ EComp5 ∧ HComp ∧ Count5 ∧ Slopes ∧ QuotientSlopeBoundsWith ∧ LossBounds ∧ SlopeIneq ∧ HHBound ∧ FParams`.\n\nQui Vincit and Fable · CC-BY-4.0"
+    }
+  },
+  "sources": {
+    "Deduction.zeroFree_of_rpow_window": [
+      {
+        "title": "The positive weights in the family",
+        "markdown": "**[read]** `CharFamily` (`Development/AutomorphicArithmetic/DedekindLFunctions/CharFamily.lean:24`) has only `a i > 0` and `N i = 1 ∨ χ i ≠ 1`: no coefficient positivity.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L42-L42",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          11,
+          11
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "Deduction.landau_window": [
+      {
+        "title": "The two cases of the pole argument",
+        "markdown": "4. **[read]** `landau_dichotomy`: given ρ₀ ∈ Z with Re ρ₀ > θ, either (a) B(σ, D), D ≤ σ − θ, is pole-free while some pole has σ − Re ρ₁ < D, or (b) the nearest pole to σ is a real β > θ, alone in B(σ, r), σ − β < r ≤ σ − θ.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L54-L54",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          90,
+          91
+        ],
+        "evidence": "Contributor reading of the source"
+      },
+      {
+        "title": "Why the argument is windowed",
+        "markdown": "*[inferred]* Only T_k with k → ∞ are used, each seeing g through a kernel centred near u ≈ (1 + δ/2)U, so one window per k, beyond every point, suffices. The off-window mass must fall below σ^{−k} although |g| may reach C₀e^{2u}; tilting achieves this only if the window's log-length δU is proportional to U, and then σ ≈ 36/δ², which blows up as δ → 0. Windows [Y, CY] would fail; any fixed λ > 1 works.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L63-L63",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          88,
+          88
+        ],
+        "evidence": "Contributor interpretation of the proof"
+      },
+      {
+        "title": "The windowed Landau theorem in an independent exposition",
+        "url": "https://ishaan2006.github.io/rh-lean-reproduction/#the-windowed-landau-theorem",
+        "authors": [
+          "ishaan2006"
+        ],
+        "evidence": "Independent exposition"
+      },
+      {
+        "title": "The analytic endgame in the community reader’s map",
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/issues/5",
+        "authors": [
+          "JoseClaudioSJr"
+        ],
+        "evidence": "Community reading of the source"
+      }
+    ],
+    "Formalism.HN.TheoremF": [
+      {
+        "title": "Theorem F and its sharper form",
+        "markdown": "**Statement.** `TheoremF` (StatementFrameF.lean:26) and `TheoremFSharp` (:64) have identical hypotheses (third reading §10). **[read]** Their conclusions are\n\n    s - log |I| - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- F\n    s           - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- FSharp",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattice-theory.md#L25-L28",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          61,
+          62
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.key_identity5": [
+      {
+        "title": "Where the two main terms agree",
+        "markdown": "- `key_identity` (`Formalism/RankGapBounds/RankGapProofs/WeightedMeanData.lean:170`) and `key_identity5` (`Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean:105`): SDiv − sumA·Lam5 + m·sumA·lg = Main(u0) + sumA·cCount(La + m²La/k), exactly. Here Lam5 is `Count5`'s lower bound for log T. **proved-by**",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/main-term.md#L170-L170",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          105,
+          107
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "UpperTheory.Top.VVle": [
+      {
+        "title": "What the cohomological length measures",
+        "markdown": "- `Sha D e` is `Sha1 (qzTw D e)`. These are the classes in H¹(G_S, ℚ_ℓ/ℤ_ℓ(−e)) over E that are trivial at every place above ℓ; S is the set of those places. `shaLen` is the ℤ_ℓ-length (`Formalism/GaloisCohomology/Statement.lean:54–78`). **read**",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L65-L65",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          14,
+          17
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at": [
+      {
+        "title": "Where the congruence bound comes from",
+        "markdown": "- `IsRankRPart` (BS:57) says r_π ⊗ K ≅ ρ ⊕ ⊕_{c=1}^t χ_c. **read**\n- `sPi` (BS:71) is the length of a Bloch–Kato Selmer group of ρ ⊗ χ₁⁻¹ with values in (K/O)^r (`selPi`, QH:380). **read**\n- It is proved in `NLinkE.main_alt_alt` (TPS/AdmissibleParameterEventually.lean:30) by `congruenceBound_extended_of_rationalBound ∘ globalCongruenceCount_of_rootDifference_unit`. **proved-by**",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L105-L107",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          91,
+          93
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "UpperTheory.Top.supplyChi": [
+      {
+        "title": "The construction behind supplyChi",
+        "markdown": "**[proved-by]** `supplyChi : ∀ ψ, VWinAt ψ 401 → HostExW (3/2) (GChi ψ).req` (`CharacterBoxes/SupplyChi.lean:8`), proved as `supplyOfAdm` (`CharacterBoxes/HostOfField.lean:17`). That is `supplyOfAdmOf hostOfField` fed with `admissibleClassesTwistedChar` (`CoprimeRanks/AdmChi.lean:13`). The latter gives ranks with `RankVal` and `admitted R H0`: every choice of level data extends H0 to a `Host` (`CharacterBoxes/Imports.lean:9`). **[read]** `hostOfField` (`HostOfField.lean:8`) takes `PairWin s Y`, `PairGood M ε Y x q d`, `FieldRows` and `admitted`. It returns a host H ⊇ H0 satisfying `HostGood s C8 4 c6 Cb H q0` and `Shares H.TT (x^{−1+ε})`. `supplyOfAdmOf` (`ShortNorms/supplyOfAdmOf.lean:13`) combines it with `fieldChi`, `winPairs` (which calls `QH.pairEx`) and `boundedTw`.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/hosts.md#L60-L60",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          11,
+          16
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "UpperTheory.Top.PairEx": [
+      {
+        "title": "The two prime choices",
+        "markdown": "`PairEx` (:28) says: for all M ≥ 1, ε < 1/52 and A ≥ 1 there is Y1 such that every Y ≥ Y1 has q, d with `PairGood M ε Y (Y^A) q d`. **[proved-by]** `QH.pairEx` (`MeanSquareBounds/pairEx.lean:112`).",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/hosts.md#L73-L73",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          28,
+          30
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "Formalism.MainNotions.LocalQuadraticParts.adm2": [
+      {
+        "title": "The exact integrality statement",
+        "markdown": "- `adm2 D L` (`Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean:206`) says: for every word u, place w, φ ∈ `L.NuLat u`, and every F ∈ `Mtilde(muAt w)` that also lies in `V0(muAt w)`, the period `perCol u (muAt w) (jN u φ) F` equals `embLL y` for some y with y = 0 or `⌊ur D w (L.sg u w)⌋ ≤ vAdd (plEq w) y`. **read** `UnroundedValuationBound` (:212) states the same bound without the floor, and `valuation_bound_of_unrounded` (:218) derives `adm2` from it. **read**",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/divisibility-trace.md#L13-L13",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          207,
+          210
+        ],
+        "evidence": "Contributor reading of the source"
+      },
+      {
+        "title": "A worked example of the divisibility compensation",
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/issues/77",
+        "authors": [
+          "uos1231234"
+        ],
+        "evidence": "Related community explanation"
+      }
+    ],
+    "Formalism.HN.frameB_share": [
+      {
+        "title": "How the cut rank is bounded",
+        "markdown": "2. *Corank share (Markov).* Let x_ij be the normalised HN slopes of N_i minus h_i. **[proved-by]** Their rank-weighted mean is ≥ s, and each is ≤ s + u (by hypothesis and HNExtreme). **[proved-by]** `frameB_share` (HNP/FrameHermSharpB.lean:25) concludes #{x_ij < s − τ} ≤ (Σ m_i)·u/(u+τ). **[proved-by]** Combined with `frameB_count_lt`, this becomes `hcor`. **[proved-by]** It states that the steps Nt(τ,i) = hnStep(N_i, level s−τ+h_i) satisfy Σ_i(rk N_i − rk Nt) ≤ (u/(u+τ))·Σ_i rk N_i. **[proved-by]**",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattice-theory.md#L39-L39",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          25,
+          28
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "UpperTheory.Top.divinN_of_hypV": [
+      {
+        "title": "Where the proof spends the cohomological bound",
+        "markdown": "- `divinN_of_hypV` (`DivinNOfHypV.lean:117`). **proved-by**\n  - `vvRecord` (:17) extracts three facts from `HypV`: `ShaFinOdd`, which discharges the premise of `LinkN`; `Summable`, the premise of `LinkN_at`; and Σ'vvTerm ≤ √b.\n  - The third is weakened by `Real.sqrt_le_self_iff` to Σ'vvTerm ≤ b.\n  - In `divinN_at` (:76), `linarith` closes the goal using hb : Σ' ≤ b together with b ≤ B0 and B0 ≤ x^ε(B0+Nc). So the bound is used, but only in this weaker form.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L164-L167",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          126,
+          129
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ],
+    "Formalism.LFunctionChainParameters.LChain.SizeData₂": [
+      {
+        "title": "Where ChainTied gets the eleven clauses",
+        "markdown": "- [R] `ChainTied` (`GSB/TieGlobal.lean:97`) demands `LChain.SizeData₂ Dd C Xpp` (`SWB/SChain.lean:17`) `:= HidaSetting ∧ DIV ∧ EComp5 ∧ HComp ∧ Count5 ∧ Slopes ∧ QuotientSlopeBoundsWith ∧ LossBounds ∧ SlopeIneq ∧ HHBound ∧ FParams`.",
+        "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattices.md#L8-L8",
+        "authors": [
+          "Qui Vincit",
+          "Fable"
+        ],
+        "license": "CC-BY-4.0",
+        "lean_lines": [
+          17,
+          19
+        ],
+        "evidence": "Contributor reading of the source"
+      }
+    ]
+  },
+  "bindings": {
+    "riemannHypothesis": {
+      "references": [
+        "st:rh",
+        "verification:145:1",
+        "verification:204:1",
+        "offpath:5:1"
+      ],
+      "marks": [
+        "st:rh",
+        "verification:145:1",
+        "verification:204:1",
+        "offpath:5:1"
+      ],
+      "passages": [
+        "st:rh"
+      ],
+      "topics": [
+        "formal-verification",
+        "off-path"
+      ],
+      "source": {
+        "name": "riemannHypothesis",
+        "file": "src/Main.lean",
+        "module": "Main",
+        "kind": "theorem",
+        "lines": [
+          4,
+          4
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Main.lean#L4-L4",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          4,
+          4
+        ],
+        "proof_lines": [
+          4,
+          4
+        ]
+      }
+    },
+    "LFunction_ne_zero_of_half_lt_re": {
+      "references": [
+        "st:grh"
+      ],
+      "marks": [
+        "st:grh"
+      ],
+      "passages": [
+        "st:grh"
+      ],
+      "topics": [
+        "formal-verification"
+      ],
+      "source": {
+        "name": "LFunction_ne_zero_of_half_lt_re",
+        "file": "src/Main.lean",
+        "module": "Main",
+        "kind": "theorem",
+        "lines": [
+          8,
+          8
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Main.lean#L8-L8",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          8,
+          8
+        ],
+        "proof_lines": [
+          8,
+          8
+        ]
+      }
+    },
+    "LFunction_eq_zero_re": {
+      "references": [
+        "st:strip"
+      ],
+      "marks": [
+        "st:strip"
+      ],
+      "passages": [
+        "st:strip"
+      ],
+      "topics": [
+        "formal-verification"
+      ],
+      "source": {
+        "name": "LFunction_eq_zero_re",
+        "file": "src/Main.lean",
+        "module": "Main",
+        "kind": "theorem",
+        "lines": [
+          10,
+          10
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Main.lean#L10-L10",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          10,
+          10
+        ],
+        "proof_lines": [
+          10,
+          10
+        ]
+      }
+    },
+    "Deduction.zeroFree_of_rpow_window": {
+      "references": [
+        "st:landau"
+      ],
+      "marks": [
+        "st:landau"
+      ],
+      "passages": [
+        "st:landau"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Deduction.zeroFree_of_rpow_window",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ZeroFreeOfRpowWindow.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.ZeroFreeOfRpowWindow",
+        "kind": "theorem",
+        "lines": [
+          11,
+          14
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ZeroFreeOfRpowWindow.lean#L11-L14",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          11,
+          13
+        ],
+        "proof_lines": [
+          13,
+          14
+        ]
+      }
+    },
+    "Deduction.ch_balance": {
+      "references": [
+        "st:balance",
+        "offpath:71:1"
+      ],
+      "marks": [
+        "st:balance",
+        "offpath:71:1"
+      ],
+      "passages": [
+        "st:balance",
+        "character-orthogonality"
+      ],
+      "topics": [
+        "counts",
+        "off-path"
+      ],
+      "source": {
+        "name": "Deduction.ch_balance",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.ChBalance",
+        "kind": "theorem",
+        "lines": [
+          200,
+          260
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean#L200-L260",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          200,
+          202
+        ],
+        "proof_lines": [
+          202,
+          260
+        ]
+      }
+    },
+    "Deduction.ch_core": {
+      "references": [
+        "st:core",
+        "offpath:71:2"
+      ],
+      "marks": [
+        "st:core",
+        "offpath:71:2"
+      ],
+      "passages": [
+        "st:core",
+        "apply-count-balance",
+        "average-kept-characters"
+      ],
+      "topics": [
+        "counts",
+        "off-path"
+      ],
+      "source": {
+        "name": "Deduction.ch_core",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.ChCore",
+        "kind": "theorem",
+        "lines": [
+          342,
+          442
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean#L342-L442",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          342,
+          351
+        ],
+        "proof_lines": [
+          351,
+          442
+        ]
+      }
+    },
+    "Formalism.HN.TheoremF": {
+      "references": [
+        "st:F"
+      ],
+      "marks": [
+        "st:F"
+      ],
+      "passages": [
+        "st:F"
+      ],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.HN.TheoremF",
+        "file": "src/Formalism/HarderNarasimhan/StatementFrameF.lean",
+        "module": "Formalism.HarderNarasimhan.StatementFrameF",
+        "kind": "def",
+        "lines": [
+          26,
+          62
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/HarderNarasimhan/StatementFrameF.lean#L26-L62",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          26,
+          62
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.key_identity5": {
+      "references": [
+        "st:key"
+      ],
+      "marks": [
+        "st:key"
+      ],
+      "passages": [
+        "st:key"
+      ],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.WeightedSlopeBounds.key_identity5",
+        "file": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean",
+        "module": "Formalism.SizeWindowBrackets.ChainSlopeWindows.LevelOfCongruence",
+        "kind": "theorem",
+        "lines": [
+          105,
+          111
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean#L105-L111",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          105,
+          107
+        ],
+        "proof_lines": [
+          107,
+          111
+        ]
+      }
+    },
+    "Formalism.L2.Th1.CM.CM2": {
+      "references": [
+        "st:cm2"
+      ],
+      "marks": [
+        "st:cm2"
+      ],
+      "passages": [
+        "st:cm2"
+      ],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.L2.Th1.CM.CM2",
+        "file": "src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean",
+        "module": "Formalism.LocalToGlobal.TorsionIntegrality.CMGoodModels.Statement",
+        "kind": "def",
+        "lines": [
+          45,
+          47
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean#L45-L47",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          45,
+          47
+        ]
+      }
+    },
+    "Formalism.L2.Th1.CM.CM3": {
+      "references": [
+        "st:cm3"
+      ],
+      "marks": [
+        "st:cm3"
+      ],
+      "passages": [
+        "st:cm3"
+      ],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.L2.Th1.CM.CM3",
+        "file": "src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean",
+        "module": "Formalism.LocalToGlobal.TorsionIntegrality.CMGoodModels.Statement",
+        "kind": "def",
+        "lines": [
+          49,
+          55
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean#L49-L55",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          49,
+          55
+        ]
+      }
+    },
+    "UpperTheory.Top.VVle": {
+      "references": [
+        "st:vwin:1"
+      ],
+      "marks": [
+        "st:vwin"
+      ],
+      "passages": [
+        "st:vwin"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.VVle",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+        "kind": "def",
+        "lines": [
+          12,
+          17
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean#L12-L17",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          12,
+          17
+        ]
+      }
+    },
+    "UpperTheory.Top.VWin": {
+      "references": [
+        "st:vwin:2"
+      ],
+      "marks": [
+        "st:vwin"
+      ],
+      "passages": [
+        "st:vwin",
+        "why-counts-windowed"
+      ],
+      "topics": [
+        "cohomology",
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.VWin",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+        "kind": "def",
+        "lines": [
+          49,
+          49
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean#L49-L49",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          49,
+          49
+        ]
+      }
+    },
+    "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at": {
+      "references": [
+        "st:cong"
+      ],
+      "marks": [
+        "st:cong"
+      ],
+      "passages": [
+        "st:cong"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at",
+        "file": "src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/BaseSizes.lean",
+        "module": "Development.AbelianVarietyTheory.BlockTheory.NonGaloisCusps.BaseSizes",
+        "kind": "def",
+        "lines": [
+          87,
+          93
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/BaseSizes.lean#L87-L93",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          87,
+          93
+        ]
+      }
+    },
+    "UpperTheory.Top.supplyChi": {
+      "references": [
+        "st:supply"
+      ],
+      "marks": [
+        "st:supply"
+      ],
+      "passages": [
+        "st:supply",
+        "why-counts-windowed"
+      ],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.supplyChi",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.SupplyChi",
+        "kind": "theorem",
+        "lines": [
+          8,
+          16
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean#L8-L16",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          8,
+          9
+        ],
+        "proof_lines": [
+          9,
+          16
+        ]
+      }
+    },
+    "UpperTheory.Top.PairEx": {
+      "references": [
+        "st:pairs"
+      ],
+      "marks": [
+        "st:pairs"
+      ],
+      "passages": [
+        "st:pairs"
+      ],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.PairEx",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.PairGood",
+        "kind": "def",
+        "lines": [
+          28,
+          30
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean#L28-L30",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          28,
+          30
+        ]
+      }
+    },
+    "Deduction.landau_window": {
+      "references": [],
+      "marks": [],
+      "passages": [
+        "landau-proof-idea"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Deduction.landau_window",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.landauWindow",
+        "kind": "theorem",
+        "lines": [
+          83,
+          166
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean#L83-L166",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          83,
+          84
+        ],
+        "proof_lines": [
+          84,
+          166
+        ]
+      }
+    },
+    "Deduction.lemmaL": {
+      "references": [],
+      "marks": [],
+      "passages": [
+        "landau-proof-idea"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Deduction.lemmaL",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/lemmaL.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.lemmaL",
+        "kind": "theorem",
+        "lines": [
+          13,
+          22
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/lemmaL.lean#L13-L22",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Top.every_character_of_green_v_win": {
+      "references": [
+        "overview:10:1"
+      ],
+      "marks": [
+        "three-inputs"
+      ],
+      "passages": [
+        "three-inputs"
+      ],
+      "topics": [
+        "overview"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.every_character_of_green_v_win",
+        "file": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean",
+        "module": "Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopPlug",
+        "kind": "theorem",
+        "lines": [
+          16,
+          18
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean#L16-L18",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          16,
+          17
+        ],
+        "proof_lines": [
+          17,
+          18
+        ]
+      }
+    },
+    "UpperTheory.Top.zero_free_all_of_green_v_win": {
+      "references": [
+        "overview:7:1"
+      ],
+      "marks": [
+        "three-inputs"
+      ],
+      "passages": [
+        "three-inputs"
+      ],
+      "topics": [
+        "overview"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.zero_free_all_of_green_v_win",
+        "file": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean",
+        "module": "Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopPlug",
+        "kind": "theorem",
+        "lines": [
+          12,
+          15
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopPlug.lean#L12-L15",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          12,
+          13
+        ],
+        "proof_lines": [
+          13,
+          15
+        ]
+      }
+    },
+    "Formalism.HC.Level.wt": {
+      "references": [],
+      "marks": [],
+      "passages": [
+        "level-character-weights"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Formalism.HC.Level.wt",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions",
+        "kind": "def",
+        "lines": [
+          34,
+          36
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean#L34-L36",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          34,
+          36
+        ]
+      }
+    },
+    "Formalism.HC.Level.Gm": {
+      "references": [
+        "analytic:33:1"
+      ],
+      "marks": [
+        "level-character-weights"
+      ],
+      "passages": [
+        "level-character-weights"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Formalism.HC.Level.Gm",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions",
+        "kind": "def",
+        "lines": [
+          38,
+          38
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean#L38-L38",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          38,
+          38
+        ]
+      }
+    },
+    "Formalism.HC.zeroFreeOn_of_levels": {
+      "references": [
+        "analytic:33:2"
+      ],
+      "marks": [
+        "level-character-weights"
+      ],
+      "passages": [
+        "level-character-weights"
+      ],
+      "topics": [
+        "landau"
+      ],
+      "source": {
+        "name": "Formalism.HC.zeroFreeOn_of_levels",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions",
+        "kind": "theorem",
+        "lines": [
+          45,
+          48
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean#L45-L48",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          45,
+          45
+        ],
+        "proof_lines": [
+          45,
+          48
+        ]
+      }
+    },
+    "Deduction.CharacterBalanceMoves.core": {
+      "references": [],
+      "marks": [],
+      "passages": [
+        "apply-count-balance"
+      ],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Deduction.CharacterBalanceMoves.core",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.ChCore",
+        "kind": "theorem",
+        "lines": [
+          283,
+          338
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean#L283-L338",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          283,
+          289
+        ],
+        "proof_lines": [
+          289,
+          338
+        ]
+      }
+    },
+    "Formalism.HN.frameB_share": {
+      "references": [
+        "lattices:188:1"
+      ],
+      "marks": [
+        "rank-lost-at-a-filtration-cut"
+      ],
+      "passages": [
+        "rank-lost-at-a-filtration-cut"
+      ],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.HN.frameB_share",
+        "file": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameHermSharpB.lean",
+        "module": "Formalism.HarderNarasimhan.HarderNarasimhanProofs.FrameHermSharpB",
+        "kind": "theorem",
+        "lines": [
+          25,
+          60
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameHermSharpB.lean#L25-L60",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          25,
+          28
+        ],
+        "proof_lines": [
+          28,
+          60
+        ]
+      }
+    },
+    "UpperTheory.Top.divinN_of_hypV": {
+      "references": [
+        "cohomology:48:1"
+      ],
+      "marks": [
+        "cohomology-square-root-slack"
+      ],
+      "passages": [
+        "cohomology-square-root-slack"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.divinN_of_hypV",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.DivinNOfHypV",
+        "kind": "theorem",
+        "lines": [
+          117,
+          130
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean#L117-L130",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          117,
+          118
+        ],
+        "proof_lines": [
+          118,
+          130
+        ]
+      }
+    },
+    "Formalism.MainNotions.N.ZN": {
+      "references": [
+        "cohomology:60:1"
+      ],
+      "marks": [
+        "hecke-lift-subset"
+      ],
+      "passages": [
+        "hecke-lift-subset"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.N.ZN",
+        "file": "src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+        "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+        "kind": "def",
+        "lines": [
+          1292,
+          1294
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L1292-L1294",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          1292,
+          1294
+        ]
+      }
+    },
+    "Formalism.BasicNotions.ccIdeal": {
+      "references": [
+        "cohomology:61:1"
+      ],
+      "marks": [
+        "congruence-ideal-and-length"
+      ],
+      "passages": [
+        "congruence-ideal-and-length"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.ccIdeal",
+        "file": "src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+        "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+        "kind": "def",
+        "lines": [
+          25,
+          27
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L25-L27",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          25,
+          27
+        ]
+      }
+    },
+    "Formalism.BasicNotions.NData.etaLoc": {
+      "references": [
+        "cohomology:64:1"
+      ],
+      "marks": [
+        "congruence-ideal-and-length"
+      ],
+      "passages": [
+        "congruence-ideal-and-length"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.NData.etaLoc",
+        "file": "src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+        "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+        "kind": "def",
+        "lines": [
+          219,
+          220
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L219-L220",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          219,
+          220
+        ]
+      }
+    },
+    "UpperTheory.V.HV.Core.of_four_alt": {
+      "references": [
+        "cohomology:91:1"
+      ],
+      "marks": [
+        "assemble-cohomology-counts"
+      ],
+      "passages": [
+        "assemble-cohomology-counts"
+      ],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.HV.Core.of_four_alt",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.HVCore",
+        "kind": "theorem",
+        "lines": [
+          18,
+          22
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean#L18-L22",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          18,
+          18
+        ],
+        "proof_lines": [
+          18,
+          22
+        ]
+      }
+    },
+    "Formalism.HC.HostRaw": {
+      "references": [
+        "hosts:15:1"
+      ],
+      "marks": [
+        "quadratic-subfield-of-host"
+      ],
+      "passages": [
+        "quadratic-subfield-of-host"
+      ],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "Formalism.HC.HostRaw",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ConjEMemHostFIff",
+        "kind": "inductive",
+        "lines": [
+          12,
+          46
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ConjEMemHostFIff.lean#L12-L46",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "QH.meanSqK": {
+      "references": [
+        "hosts:57:1"
+      ],
+      "marks": [
+        "estimates-for-auxiliary-twists"
+      ],
+      "passages": [
+        "estimates-for-auxiliary-twists"
+      ],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "QH.meanSqK",
+        "file": "src/Development/AutomorphicArithmetic/MeanSquareBounds/meanSqK.lean",
+        "module": "Development.AutomorphicArithmetic.MeanSquareBounds.meanSqK",
+        "kind": "theorem",
+        "lines": [
+          50,
+          221
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/MeanSquareBounds/meanSqK.lean#L50-L221",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          50,
+          54
+        ],
+        "proof_lines": [
+          54,
+          221
+        ]
+      }
+    },
+    "Formalism.HermitianLattices.Ext.PrimitiveCharacterCasts.ZD.zero_density_box": {
+      "references": [
+        "hosts:57:2"
+      ],
+      "marks": [
+        "estimates-for-auxiliary-twists"
+      ],
+      "passages": [
+        "estimates-for-auxiliary-twists"
+      ],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "Formalism.HermitianLattices.Ext.PrimitiveCharacterCasts.ZD.zero_density_box",
+        "file": "src/Formalism/GL3MeanSquares/GenusMeanAsymptotics/JacobiCharacterSums/CountZAll.lean",
+        "module": "Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.CountZAll",
+        "kind": "theorem",
+        "lines": [
+          13,
+          15
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/GL3MeanSquares/GenusMeanAsymptotics/JacobiCharacterSums/CountZAll.lean#L13-L15",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.LFunctionChainParameters.LChain.SizeData₂": {
+      "references": [
+        "lattices:52:1"
+      ],
+      "marks": [
+        "eleven-size-clauses"
+      ],
+      "passages": [
+        "eleven-size-clauses"
+      ],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.LChain.SizeData₂",
+        "file": "src/Formalism/SizeWindowBrackets/SChain.lean",
+        "module": "Formalism.SizeWindowBrackets.SChain",
+        "kind": "def",
+        "lines": [
+          17,
+          19
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/SChain.lean#L17-L19",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          17,
+          19
+        ]
+      }
+    },
+    "riemannZeta_eq_zero_re": {
+      "references": [
+        "verification:63:1"
+      ],
+      "marks": [
+        "verification:63:1"
+      ],
+      "passages": [],
+      "topics": [
+        "formal-verification"
+      ],
+      "source": {
+        "name": "riemannZeta_eq_zero_re",
+        "file": "src/Main.lean",
+        "module": "Main",
+        "kind": "theorem",
+        "lines": [
+          6,
+          6
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Main.lean#L6-L6",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false
+      }
+    },
+    "LFunction_eq_zero_re_of_isPrimitive": {
+      "references": [
+        "verification:64:1"
+      ],
+      "marks": [
+        "verification:64:1"
+      ],
+      "passages": [],
+      "topics": [
+        "formal-verification"
+      ],
+      "source": {
+        "name": "LFunction_eq_zero_re_of_isPrimitive",
+        "file": "src/Main.lean",
+        "module": "Main",
+        "kind": "theorem",
+        "lines": [
+          12,
+          12
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Main.lean#L12-L12",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false
+      }
+    },
+    "Formalism.HC.ZeroFreeAll": {
+      "references": [
+        "overview:6:1"
+      ],
+      "marks": [
+        "overview:6:1"
+      ],
+      "passages": [],
+      "topics": [
+        "overview"
+      ],
+      "source": {
+        "name": "Formalism.HC.ZeroFreeAll",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions",
+        "kind": "def",
+        "lines": [
+          18,
+          18
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean#L18-L18",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          18,
+          18
+        ]
+      }
+    },
+    "Formalism.MainNotions.ChainTied": {
+      "references": [
+        "overview:27:1",
+        "overview:27:2"
+      ],
+      "marks": [
+        "overview:27:1",
+        "overview:27:2"
+      ],
+      "passages": [],
+      "topics": [
+        "overview"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.ChainTied",
+        "file": "src/Formalism/SharpRestriction/GlobalSchurBounds/TieGlobal.lean",
+        "module": "Formalism.SharpRestriction.GlobalSchurBounds.TieGlobal",
+        "kind": "def",
+        "lines": [
+          97,
+          114
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GlobalSchurBounds/TieGlobal.lean#L97-L114",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          97,
+          114
+        ]
+      }
+    },
+    "Deduction.CH.HostFactsS": {
+      "references": [
+        "analytic:56:1",
+        "offpath:72:1"
+      ],
+      "marks": [
+        "analytic:56:1",
+        "offpath:72:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts",
+        "off-path"
+      ],
+      "source": {
+        "name": "Deduction.CH.HostFactsS",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.SplitInertia",
+        "kind": "inductive",
+        "lines": [
+          14,
+          22
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean#L14-L22",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Deduction.CH.SizesA": {
+      "references": [
+        "analytic:91:1"
+      ],
+      "marks": [
+        "analytic:91:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Deduction.CH.SizesA",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.SplitInertia",
+        "kind": "def",
+        "lines": [
+          42,
+          48
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean#L42-L48",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          42,
+          48
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.ThinScales": {
+      "references": [
+        "analytic:98:1"
+      ],
+      "marks": [
+        "analytic:98:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.ThinScales",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          55,
+          56
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L55-L56",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          55,
+          56
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.LChain.CostWindows": {
+      "references": [
+        "analytic:98:2"
+      ],
+      "marks": [
+        "analytic:98:2"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.LChain.CostWindows",
+        "file": "src/Formalism/SizeWindowBrackets/SChain.lean",
+        "module": "Formalism.SizeWindowBrackets.SChain",
+        "kind": "def",
+        "lines": [
+          50,
+          51
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/SChain.lean#L50-L51",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          50,
+          51
+        ]
+      }
+    },
+    "Formalism.MainNotions.Lnk.Char_at": {
+      "references": [
+        "analytic:99:1"
+      ],
+      "marks": [
+        "analytic:99:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.Lnk.Char_at",
+        "file": "src/Formalism/SharpRestriction/GlobalSchurBounds/QuadraticLogDerivCongr.lean",
+        "module": "Formalism.SharpRestriction.GlobalSchurBounds.QuadraticLogDerivCongr",
+        "kind": "def",
+        "lines": [
+          221,
+          229
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GlobalSchurBounds/QuadraticLogDerivCongr.lean#L221-L229",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          221,
+          229
+        ]
+      }
+    },
+    "Formalism.HC.HostRaw.ExceptionalCharacterKept": {
+      "references": [
+        "analytic:141:1"
+      ],
+      "marks": [
+        "analytic:141:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Formalism.HC.HostRaw.ExceptionalCharacterKept",
+        "file": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Analytic.lean",
+        "module": "Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.Analytic",
+        "kind": "def",
+        "lines": [
+          158,
+          159
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Analytic.lean#L158-L159",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          158,
+          159
+        ]
+      }
+    },
+    "UpperTheory.Comparison₂.gmA_eq": {
+      "references": [
+        "analytic:145:1"
+      ],
+      "marks": [
+        "analytic:145:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "UpperTheory.Comparison₂.gmA_eq",
+        "file": "src/Development/AutomorphicArithmetic/PrimitiveCosets/GmAEq.lean",
+        "module": "Development.AutomorphicArithmetic.PrimitiveCosets.GmAEq",
+        "kind": "theorem",
+        "lines": [
+          61,
+          149
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/PrimitiveCosets/GmAEq.lean#L61-L149",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Comparison₂.sigA_le": {
+      "references": [
+        "analytic:146:1"
+      ],
+      "marks": [
+        "analytic:146:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "UpperTheory.Comparison₂.sigA_le",
+        "file": "src/Development/AutomorphicArithmetic/PrimitiveCosets/SigALe.lean",
+        "module": "Development.AutomorphicArithmetic.PrimitiveCosets.SigALe",
+        "kind": "theorem",
+        "lines": [
+          38,
+          60
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/PrimitiveCosets/SigALe.lean#L38-L60",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Comparison₂.core_gm": {
+      "references": [
+        "analytic:148:1"
+      ],
+      "marks": [
+        "analytic:148:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "UpperTheory.Comparison₂.core_gm",
+        "file": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean",
+        "module": "Development.AutomorphicArithmetic.PrimitiveCosets.CoreGm",
+        "kind": "theorem",
+        "lines": [
+          12,
+          74
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean#L12-L74",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Deduction.ch_top": {
+      "references": [
+        "analytic:155:1"
+      ],
+      "marks": [
+        "analytic:155:1"
+      ],
+      "passages": [],
+      "topics": [
+        "counts"
+      ],
+      "source": {
+        "name": "Deduction.ch_top",
+        "file": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean",
+        "module": "Development.AutomorphicArithmetic.DedekindLFunctions.LandauTheorems.ChTop",
+        "kind": "theorem",
+        "lines": [
+          37,
+          72
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean#L37-L72",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.SizeWindows": {
+      "references": [
+        "analytic:158:1"
+      ],
+      "marks": [
+        "analytic:158:1"
+      ],
+      "passages": [],
+      "topics": [
+        "scale"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.SizeWindows",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          109,
+          117
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L109-L117",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          109,
+          117
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthSizeBound": {
+      "references": [
+        "analytic:177:1"
+      ],
+      "marks": [
+        "analytic:177:1"
+      ],
+      "passages": [],
+      "topics": [
+        "scale"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthSizeBound",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          119,
+          122
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L119-L122",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          119,
+          122
+        ]
+      }
+    },
+    "GlobalTheory.Mem.Col2.GStep.Fi": {
+      "references": [
+        "lattices:30:1"
+      ],
+      "marks": [
+        "lattices:30:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "GlobalTheory.Mem.Col2.GStep.Fi",
+        "file": "src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/PredMemGamRanks.lean",
+        "module": "Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.PredMemGamRanks",
+        "kind": "def",
+        "lines": [
+          151,
+          159
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Definitions/AutomorphicMembership/PredMemGamRanks.lean#L151-L159",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          151,
+          159
+        ]
+      }
+    },
+    "Formalism.BasicNotions.DV.Iu": {
+      "references": [
+        "lattices:42:1"
+      ],
+      "marks": [
+        "lattices:42:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.DV.Iu",
+        "file": "src/Formalism/LocalRingCardinality/DataDIVDefs.lean",
+        "module": "Formalism.LocalRingCardinality.DataDIVDefs",
+        "kind": "def",
+        "lines": [
+          17,
+          20
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataDIVDefs.lean#L17-L20",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          17,
+          20
+        ]
+      }
+    },
+    "Formalism.BasicNotions.DV.NprimeDef": {
+      "references": [
+        "lattices:42:2"
+      ],
+      "marks": [
+        "lattices:42:2"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.DV.NprimeDef",
+        "file": "src/Formalism/LocalRingCardinality/DataDIVDefs.lean",
+        "module": "Formalism.LocalRingCardinality.DataDIVDefs",
+        "kind": "def",
+        "lines": [
+          22,
+          24
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataDIVDefs.lean#L22-L24",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          22,
+          24
+        ]
+      }
+    },
+    "Formalism.BasicNotions.SizeData₂.sg": {
+      "references": [
+        "lattices:42:3"
+      ],
+      "marks": [
+        "lattices:42:3"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.SizeData₂.sg",
+        "file": "src/Formalism/LocalRingCardinality/DataParams₂.lean",
+        "module": "Formalism.LocalRingCardinality.DataParams₂",
+        "kind": "def",
+        "lines": [
+          215,
+          216
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataParams%E2%82%82.lean#L215-L216",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          215,
+          216
+        ]
+      }
+    },
+    "Formalism.BasicNotions.SizeData₂.Ga": {
+      "references": [
+        "lattices:65:1"
+      ],
+      "marks": [
+        "lattices:65:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.SizeData₂.Ga",
+        "file": "src/Formalism/LocalRingCardinality/DataParams₂.lean",
+        "module": "Formalism.LocalRingCardinality.DataParams₂",
+        "kind": "def",
+        "lines": [
+          220,
+          220
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataParams%E2%82%82.lean#L220-L220",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          220,
+          220
+        ]
+      }
+    },
+    "Formalism.BasicNotions.SizeData₂.Fo": {
+      "references": [
+        "lattices:65:2"
+      ],
+      "marks": [
+        "lattices:65:2"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.SizeData₂.Fo",
+        "file": "src/Formalism/LocalRingCardinality/DataParams₂.lean",
+        "module": "Formalism.LocalRingCardinality.DataParams₂",
+        "kind": "def",
+        "lines": [
+          218,
+          218
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataParams%E2%82%82.lean#L218-L218",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          218,
+          218
+        ]
+      }
+    },
+    "Formalism.BasicNotions.SizeData₂.Ee": {
+      "references": [
+        "lattices:65:3"
+      ],
+      "marks": [
+        "lattices:65:3"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.BasicNotions.SizeData₂.Ee",
+        "file": "src/Formalism/LocalRingCardinality/DataParams₂.lean",
+        "module": "Formalism.LocalRingCardinality.DataParams₂",
+        "kind": "def",
+        "lines": [
+          222,
+          222
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalRingCardinality/DataParams%E2%82%82.lean#L222-L222",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          222,
+          222
+        ]
+      }
+    },
+    "Formalism.RankGapBounds.WeightedMeanData.Data.Slopes": {
+      "references": [
+        "lattices:77:1"
+      ],
+      "marks": [
+        "lattices:77:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.RankGapBounds.WeightedMeanData.Data.Slopes",
+        "file": "src/Formalism/RankGapBounds/MeanBoundSecondForm.lean",
+        "module": "Formalism.RankGapBounds.MeanBoundSecondForm",
+        "kind": "def",
+        "lines": [
+          139,
+          141
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/RankGapBounds/MeanBoundSecondForm.lean#L139-L141",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          139,
+          141
+        ]
+      }
+    },
+    "Formalism.RankGapBounds.WeightedMeanData.Data.HComp": {
+      "references": [
+        "lattices:78:1"
+      ],
+      "marks": [
+        "lattices:78:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes"
+      ],
+      "source": {
+        "name": "Formalism.RankGapBounds.WeightedMeanData.Data.HComp",
+        "file": "src/Formalism/RankGapBounds/MeanBoundSecondForm.lean",
+        "module": "Formalism.RankGapBounds.MeanBoundSecondForm",
+        "kind": "def",
+        "lines": [
+          126,
+          129
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/RankGapBounds/MeanBoundSecondForm.lean#L126-L129",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          126,
+          129
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.Count5": {
+      "references": [
+        "lattices:79:1",
+        "lattices:267:1"
+      ],
+      "marks": [
+        "lattices:79:1",
+        "lattices:267:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes",
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.WeightedSlopeBounds.Count5",
+        "file": "src/Formalism/SizeWindowBrackets/QuotientSlopeBoundsWith.lean",
+        "module": "Formalism.SizeWindowBrackets.QuotientSlopeBoundsWith",
+        "kind": "def",
+        "lines": [
+          27,
+          32
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/QuotientSlopeBoundsWith.lean#L27-L32",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          27,
+          32
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.EComp5": {
+      "references": [
+        "lattices:79:2",
+        "lattices:284:1"
+      ],
+      "marks": [
+        "lattices:79:2",
+        "lattices:284:1"
+      ],
+      "passages": [],
+      "topics": [
+        "slopes",
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.WeightedSlopeBounds.EComp5",
+        "file": "src/Formalism/SizeWindowBrackets/QuotientSlopeBoundsWith.lean",
+        "module": "Formalism.SizeWindowBrackets.QuotientSlopeBoundsWith",
+        "kind": "def",
+        "lines": [
+          24,
+          25
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/QuotientSlopeBoundsWith.lean#L24-L25",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          24,
+          25
+        ]
+      }
+    },
+    "Formalism.MainNotions.LocalQuadraticParts.adm2": {
+      "references": [
+        "lattices:93:1"
+      ],
+      "marks": [
+        "lattices:93:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.LocalQuadraticParts.adm2",
+        "file": "src/Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean",
+        "module": "Formalism.SharpRestriction.Divisibility.LocalQuadraticParts",
+        "kind": "def",
+        "lines": [
+          206,
+          210
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean#L206-L210",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          206,
+          210
+        ]
+      }
+    },
+    "Formalism.L2.G.Adm2InU.admissible_level_two": {
+      "references": [
+        "lattices:99:1"
+      ],
+      "marks": [
+        "lattices:99:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.L2.G.Adm2InU.admissible_level_two",
+        "file": "src/Formalism/LocalToGlobal/GroupLattices/AdmissibleAtGeneratorPlaces.lean",
+        "module": "Formalism.LocalToGlobal.GroupLattices.AdmissibleAtGeneratorPlaces",
+        "kind": "theorem",
+        "lines": [
+          214,
+          245
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/GroupLattices/AdmissibleAtGeneratorPlaces.lean#L214-L245",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.MainNotions.G.gainP": {
+      "references": [
+        "lattices:102:1",
+        "offpath:73:1"
+      ],
+      "marks": [
+        "lattices:102:1",
+        "offpath:73:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes",
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.gainP",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          353,
+          358
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L353-L358",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          353,
+          358
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.IsV": {
+      "references": [
+        "lattices:111:1"
+      ],
+      "marks": [
+        "lattices:111:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.IsV",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          179,
+          180
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L179-L180",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          179,
+          180
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.capU": {
+      "references": [
+        "lattices:116:1"
+      ],
+      "marks": [
+        "lattices:116:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.capU",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          232,
+          233
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L232-L233",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          232,
+          233
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.gU": {
+      "references": [
+        "lattices:123:1"
+      ],
+      "marks": [
+        "lattices:123:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.gU",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          252,
+          258
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L252-L258",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          252,
+          258
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.g0": {
+      "references": [
+        "lattices:123:2"
+      ],
+      "marks": [
+        "lattices:123:2"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.g0",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          245,
+          250
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L245-L250",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          245,
+          250
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.Excl": {
+      "references": [
+        "lattices:126:1"
+      ],
+      "marks": [
+        "lattices:126:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.Excl",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          238,
+          239
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L238-L239",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          238,
+          239
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.VV": {
+      "references": [
+        "lattices:132:1"
+      ],
+      "marks": [
+        "lattices:132:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.VV",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          290,
+          293
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L290-L293",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          290,
+          293
+        ]
+      }
+    },
+    "Formalism.MainNotions.G.Good": {
+      "references": [
+        "lattices:137:1"
+      ],
+      "marks": [
+        "lattices:137:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.G.Good",
+        "file": "src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean",
+        "module": "Formalism.SharpRestriction.GrowthBounds.IsResidueClassZero",
+        "kind": "def",
+        "lines": [
+          182,
+          184
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GrowthBounds/IsResidueClassZero.lean#L182-L184",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          182,
+          184
+        ]
+      }
+    },
+    "Formalism.DivisorInequality.BoundsMu": {
+      "references": [
+        "lattices:204:1"
+      ],
+      "marks": [
+        "lattices:204:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.DivisorInequality.BoundsMu",
+        "file": "src/Formalism/DivisorInequality/StatementObj.lean",
+        "module": "Formalism.DivisorInequality.StatementObj",
+        "kind": "def",
+        "lines": [
+          17,
+          75
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/DivisorInequality/StatementObj.lean#L17-L75",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          17,
+          75
+        ]
+      }
+    },
+    "GlobalTheory.BigTop.lamLow_of_hypotheses_alt_alt": {
+      "references": [
+        "lattices:208:1"
+      ],
+      "marks": [
+        "lattices:208:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "GlobalTheory.BigTop.lamLow_of_hypotheses_alt_alt",
+        "file": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LamLowOfPublished.lean",
+        "module": "Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.LamLowOfPublished",
+        "kind": "theorem",
+        "lines": [
+          17,
+          35
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LamLowOfPublished.lean#L17-L35",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.DivisionValues.divisor_inequality_assembly": {
+      "references": [
+        "lattices:220:1"
+      ],
+      "marks": [
+        "lattices:220:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.DivisionValues.divisor_inequality_assembly",
+        "file": "src/Formalism/QuotientMetricDivisors/HermitianTwistDivisors/DivAssembly.lean",
+        "module": "Formalism.QuotientMetricDivisors.HermitianTwistDivisors.DivAssembly",
+        "kind": "theorem",
+        "lines": [
+          11,
+          42
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/QuotientMetricDivisors/HermitianTwistDivisors/DivAssembly.lean#L11-L42",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.Pj.Core.cuspA": {
+      "references": [
+        "lattices:232:1"
+      ],
+      "marks": [
+        "lattices:232:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.L2.Pj.Core.cuspA",
+        "file": "src/Formalism/LocalToGlobal/ProjectiveLattices/CuspidalL2Subspace.lean",
+        "module": "Formalism.LocalToGlobal.ProjectiveLattices.CuspidalL2Subspace",
+        "kind": "def",
+        "lines": [
+          47,
+          48
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/ProjectiveLattices/CuspidalL2Subspace.lean#L47-L48",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          47,
+          48
+        ]
+      }
+    },
+    "GlobalTheory.CovTop.Assembly.lcv_le": {
+      "references": [
+        "lattices:233:1"
+      ],
+      "marks": [
+        "lattices:233:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "GlobalTheory.CovTop.Assembly.lcv_le",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.CovolumeFromGramAndBounds",
+        "kind": "theorem",
+        "lines": [
+          39,
+          84
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean#L39-L84",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt": {
+      "references": [
+        "lattices:240:1"
+      ],
+      "marks": [
+        "lattices:240:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt",
+        "file": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopCovolSlim2Use.lean",
+        "module": "Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopCovolSlim2Use",
+        "kind": "theorem",
+        "lines": [
+          15,
+          22
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/TopCovolSlim2Use.lean#L15-L22",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "GlobalTheory.chowla_selberg_eta": {
+      "references": [
+        "lattices:254:1"
+      ],
+      "marks": [
+        "lattices:254:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "GlobalTheory.chowla_selberg_eta",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/HomogeneousIdeals/DedekindZetaEqSumRealEisenstein.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.HomogeneousIdeals.DedekindZetaEqSumRealEisenstein",
+        "kind": "theorem",
+        "lines": [
+          222,
+          243
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/HomogeneousIdeals/DedekindZetaEqSumRealEisenstein.lean#L222-L243",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.MainNotions.StandardLattice.ClassNumberFormula₂": {
+      "references": [
+        "lattices:265:1"
+      ],
+      "marks": [
+        "lattices:265:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.StandardLattice.ClassNumberFormula₂",
+        "file": "src/Formalism/SharpRestriction/GlobalSchurBounds/StandardLattice.lean",
+        "module": "Formalism.SharpRestriction.GlobalSchurBounds.StandardLattice",
+        "kind": "def",
+        "lines": [
+          453,
+          456
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GlobalSchurBounds/StandardLattice.lean#L453-L456",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          453,
+          456
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.WeightedSlopeBounds.each_unit_bound_statement": {
+      "references": [
+        "lattices:298:1"
+      ],
+      "marks": [
+        "lattices:298:1"
+      ],
+      "passages": [],
+      "topics": [
+        "periods"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.WeightedSlopeBounds.each_unit_bound_statement",
+        "file": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean",
+        "module": "Formalism.SizeWindowBrackets.ChainSlopeWindows.LevelOfCongruence",
+        "kind": "theorem",
+        "lines": [
+          175,
+          197
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean#L175-L197",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.Th1.CM.ltLog": {
+      "references": [
+        "divisibility:13:1"
+      ],
+      "marks": [
+        "divisibility:13:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.L2.Th1.CM.ltLog",
+        "file": "src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean",
+        "module": "Formalism.LocalToGlobal.TorsionIntegrality.CMGoodModels.Statement",
+        "kind": "def",
+        "lines": [
+          35,
+          36
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/TorsionIntegrality/CMGoodModels/Statement.lean#L35-L36",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          35,
+          36
+        ]
+      }
+    },
+    "Formalism.DworkPowerSeriesWeights.LemmaSt": {
+      "references": [
+        "divisibility:18:1"
+      ],
+      "marks": [
+        "divisibility:18:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.DworkPowerSeriesWeights.LemmaSt",
+        "file": "src/Formalism/GaussJetBounds/Statement.lean",
+        "module": "Formalism.GaussJetBounds.Statement",
+        "kind": "def",
+        "lines": [
+          107,
+          112
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/GaussJetBounds/Statement.lean#L107-L112",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          107,
+          112
+        ]
+      }
+    },
+    "Formalism.DworkPowerSeriesWeights.LemmaRA": {
+      "references": [
+        "divisibility:28:1"
+      ],
+      "marks": [
+        "divisibility:28:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.DworkPowerSeriesWeights.LemmaRA",
+        "file": "src/Formalism/GaussJetBounds/StatementG.lean",
+        "module": "Formalism.GaussJetBounds.StatementG",
+        "kind": "def",
+        "lines": [
+          12,
+          31
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/GaussJetBounds/StatementG.lean#L12-L31",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          12,
+          31
+        ]
+      }
+    },
+    "GlobalTheory.Corev.CmTwoClosing.cmGoodModel_of_globalArtinReciprocity": {
+      "references": [
+        "divisibility:54:1"
+      ],
+      "marks": [
+        "divisibility:54:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "GlobalTheory.Corev.CmTwoClosing.cmGoodModel_of_globalArtinReciprocity",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/DecoratedLatticeProofs/CmGoodModelOfGlobalArtinReciprocity.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.DecoratedLatticeProofs.CmGoodModelOfGlobalArtinReciprocity",
+        "kind": "theorem",
+        "lines": [
+          10,
+          11
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/DecoratedLatticeProofs/CmGoodModelOfGlobalArtinReciprocity.lean#L10-L11",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.KerInert.IntInert": {
+      "references": [
+        "divisibility:63:1"
+      ],
+      "marks": [
+        "divisibility:63:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "Formalism.L2.KerInert.IntInert",
+        "file": "src/Formalism/LocalToGlobal/InertKernelTheory/StatementInt.lean",
+        "module": "Formalism.LocalToGlobal.InertKernelTheory.StatementInt",
+        "kind": "def",
+        "lines": [
+          18,
+          24
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/InertKernelTheory/StatementInt.lean#L18-L24",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          18,
+          24
+        ]
+      }
+    },
+    "PI.OrbBoundFW.prvF_of_orbitLetterBounds": {
+      "references": [
+        "divisibility:68:1"
+      ],
+      "marks": [
+        "divisibility:68:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "PI.OrbBoundFW.prvF_of_orbitLetterBounds",
+        "file": "src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/OrbitValuationBounds/PrvFOfOrbitLetterBounds.lean",
+        "module": "Formalism.PeriodIntegrals.UnitaryGroupMassFormula.OrbitValuationBounds.PrvFOfOrbitLetterBounds",
+        "kind": "theorem",
+        "lines": [
+          17,
+          59
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/OrbitValuationBounds/PrvFOfOrbitLetterBounds.lean#L17-L59",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "GlobalTheory.T.standard_weyl_lattices_fock_dual": {
+      "references": [
+        "divisibility:75:1"
+      ],
+      "marks": [
+        "divisibility:75:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "GlobalTheory.T.standard_weyl_lattices_fock_dual",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/StandardWeylLatticesFockDualStatement.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.FoundationProofs.StandardWeylLatticesFockDualStatement",
+        "kind": "theorem",
+        "lines": [
+          13,
+          15
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/StandardWeylLatticesFockDualStatement.lean#L13-L15",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "minkowski_bound_rat": {
+      "references": [
+        "divisibility:79:1"
+      ],
+      "marks": [
+        "divisibility:79:1"
+      ],
+      "passages": [],
+      "topics": [
+        "inert-primes"
+      ],
+      "source": {
+        "name": "minkowski_bound_rat",
+        "file": "src/Formalism/PeriodIntegrals/OrbitalBoundsConclusion/MinkowskiQ.lean",
+        "module": "Formalism.PeriodIntegrals.OrbitalBoundsConclusion.MinkowskiQ",
+        "kind": "theorem",
+        "lines": [
+          6,
+          6
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/PeriodIntegrals/OrbitalBoundsConclusion/MinkowskiQ.lean#L6-L6",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.LFunctionChainParameters.MatrixLatticeEstimates.InputSG": {
+      "references": [
+        "frame:4:1"
+      ],
+      "marks": [
+        "frame:4:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.MatrixLatticeEstimates.InputSG",
+        "file": "src/Formalism/SizeWindowBrackets/FrameTraceRatioFinEquiv.lean",
+        "module": "Formalism.SizeWindowBrackets.FrameTraceRatioFinEquiv",
+        "kind": "def",
+        "lines": [
+          30,
+          35
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/FrameTraceRatioFinEquiv.lean#L30-L35",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          30,
+          35
+        ]
+      }
+    },
+    "Formalism.L2.SG.TermOp.KExpansion": {
+      "references": [
+        "frame:32:1"
+      ],
+      "marks": [
+        "frame:32:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.L2.SG.TermOp.KExpansion",
+        "file": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/TermOpStmt.lean",
+        "module": "Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.TermOpStmt",
+        "kind": "def",
+        "lines": [
+          21,
+          27
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/TermOpStmt.lean#L21-L27",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          21,
+          27
+        ]
+      }
+    },
+    "Formalism.L2.SG.TermOp.IdBlocks.oot_eq": {
+      "references": [
+        "frame:36:1"
+      ],
+      "marks": [
+        "frame:36:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.L2.SG.TermOp.IdBlocks.oot_eq",
+        "file": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/IdBlocks.lean",
+        "module": "Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.IdBlocks",
+        "kind": "theorem",
+        "lines": [
+          672,
+          703
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/IdBlocks.lean#L672-L703",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.SG.KappaOffDiagonal.SchurNFC": {
+      "references": [
+        "frame:41:1"
+      ],
+      "marks": [
+        "frame:41:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.L2.SG.KappaOffDiagonal.SchurNFC",
+        "file": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/KappaOffDiagonal.lean",
+        "module": "Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.KappaOffDiagonal",
+        "kind": "def",
+        "lines": [
+          47,
+          53
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/KappaOffDiagonal.lean#L47-L53",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          47,
+          53
+        ]
+      }
+    },
+    "CompanionTheory.Lime.BM.UniqGap": {
+      "references": [
+        "frame:46:1"
+      ],
+      "marks": [
+        "frame:46:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "CompanionTheory.Lime.BM.UniqGap",
+        "file": "src/CompanionTheory/AutomorphicTheory/LocalBesselUniqueness/BesselModels/AtFormAdmOneOfSteps.lean",
+        "module": "CompanionTheory.AutomorphicTheory.LocalBesselUniqueness.BesselModels.AtFormAdmOneOfSteps",
+        "kind": "def",
+        "lines": [
+          15,
+          26
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/CompanionTheory/AutomorphicTheory/LocalBesselUniqueness/BesselModels/AtFormAdmOneOfSteps.lean#L15-L26",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          15,
+          26
+        ]
+      }
+    },
+    "HeckeCharacterZeroLocus.SiegelWeilU.SiegelDensities": {
+      "references": [
+        "frame:49:1"
+      ],
+      "marks": [
+        "frame:49:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "HeckeCharacterZeroLocus.SiegelWeilU.SiegelDensities",
+        "file": "src/Formalism/UnipotentAdelicQuotients/SiegelWeilUnitaryConvergent.lean",
+        "module": "Formalism.UnipotentAdelicQuotients.SiegelWeilUnitaryConvergent",
+        "kind": "def",
+        "lines": [
+          18,
+          40
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/UnipotentAdelicQuotients/SiegelWeilUnitaryConvergent.lean#L18-L40",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          18,
+          40
+        ]
+      }
+    },
+    "GlobalTheory.rowMainEqP_of_siegelWeil": {
+      "references": [
+        "frame:52:1"
+      ],
+      "marks": [
+        "frame:52:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "GlobalTheory.rowMainEqP_of_siegelWeil",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/RowMainEqPOfSiegelWeil.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.FlagMeasures.RowMainEqPOfSiegelWeil",
+        "kind": "theorem",
+        "lines": [
+          10,
+          16
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/FlagMeasures/RowMainEqPOfSiegelWeil.lean#L10-L16",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.SG.TheoremS.pbApplied": {
+      "references": [
+        "frame:54:1"
+      ],
+      "marks": [
+        "frame:54:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.L2.SG.TheoremS.pbApplied",
+        "file": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/TheoremS.lean",
+        "module": "Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.TheoremS",
+        "kind": "theorem",
+        "lines": [
+          19,
+          49
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/TheoremS.lean#L19-L49",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.MainNotions.BesselId": {
+      "references": [
+        "frame:70:1"
+      ],
+      "marks": [
+        "frame:70:1"
+      ],
+      "passages": [],
+      "topics": [
+        "frames"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.BesselId",
+        "file": "src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "module": "Formalism.SharpRestriction.GlobalTheoremInputs",
+        "kind": "def",
+        "lines": [
+          65,
+          67
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean#L65-L67",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          65,
+          67
+        ]
+      }
+    },
+    "Formalism.MainNotions.LinkN_at": {
+      "references": [
+        "cohomology:40:1"
+      ],
+      "marks": [
+        "cohomology:40:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.LinkN_at",
+        "file": "src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "module": "Formalism.SharpRestriction.GlobalTheoremInputs",
+        "kind": "def",
+        "lines": [
+          40,
+          43
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean#L40-L43",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          40,
+          43
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.LChain.BNBounds": {
+      "references": [
+        "cohomology:46:1"
+      ],
+      "marks": [
+        "cohomology:46:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.LChain.BNBounds",
+        "file": "src/Formalism/SizeWindowBrackets/SChain.lean",
+        "module": "Formalism.SizeWindowBrackets.SChain",
+        "kind": "def",
+        "lines": [
+          33,
+          36
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/SChain.lean#L33-L36",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          33,
+          36
+        ]
+      }
+    },
+    "UpperTheory.Top.vvRecord": {
+      "references": [
+        "cohomology:52:1"
+      ],
+      "marks": [
+        "cohomology:52:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.vvRecord",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.DivinNOfHypV",
+        "kind": "theorem",
+        "lines": [
+          17,
+          57
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean#L17-L57",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.L2.DIV.inEta_num": {
+      "references": [
+        "cohomology:53:1"
+      ],
+      "marks": [
+        "cohomology:53:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.L2.DIV.inEta_num",
+        "file": "src/Formalism/LocalToGlobal/Divisibility/SumLeEtaSumNum.lean",
+        "module": "Formalism.LocalToGlobal.Divisibility.SumLeEtaSumNum",
+        "kind": "theorem",
+        "lines": [
+          60,
+          74
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/Divisibility/SumLeEtaSumNum.lean#L60-L74",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.WeightTie": {
+      "references": [
+        "cohomology:68:1"
+      ],
+      "marks": [
+        "st:cong"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.WeightTie",
+        "file": "src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/BaseSizes.lean",
+        "module": "Development.AbelianVarietyTheory.BlockTheory.NonGaloisCusps.BaseSizes",
+        "kind": "def",
+        "lines": [
+          52,
+          55
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/BlockTheory/NonGaloisCusps/BaseSizes.lean#L52-L55",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          52,
+          55
+        ]
+      }
+    },
+    "Formalism.MainNotions.N.HG": {
+      "references": [
+        "cohomology:69:1"
+      ],
+      "marks": [
+        "st:cong"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.N.HG",
+        "file": "src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+        "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+        "kind": "def",
+        "lines": [
+          1341,
+          1341
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L1341-L1341",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          1341,
+          1341
+        ]
+      }
+    },
+    "Formalism.MainNotions.N.GoodR": {
+      "references": [
+        "cohomology:70:1"
+      ],
+      "marks": [
+        "st:cong"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "Formalism.MainNotions.N.GoodR",
+        "file": "src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+        "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN",
+        "kind": "def",
+        "lines": [
+          1232,
+          1233
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L1232-L1233",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          1232,
+          1233
+        ]
+      }
+    },
+    "UpperTheory.V.LemmaK": {
+      "references": [
+        "cohomology:92:1",
+        "cohomology:109:1"
+      ],
+      "marks": [
+        "assemble-cohomology-counts",
+        "cohomology:109:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.LemmaK",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/GeneratorCountTuples/LemmaK.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.GeneratorCountTuples.LemmaK",
+        "kind": "def",
+        "lines": [
+          13,
+          17
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/GeneratorCountTuples/LemmaK.lean#L13-L17",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          13,
+          17
+        ]
+      }
+    },
+    "UpperTheory.V.HV.CountI": {
+      "references": [
+        "cohomology:93:1"
+      ],
+      "marks": [
+        "assemble-cohomology-counts"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.HV.CountI",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Counts",
+        "kind": "def",
+        "lines": [
+          53,
+          58
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L53-L58",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          53,
+          58
+        ]
+      }
+    },
+    "UpperTheory.V.HV.CountII": {
+      "references": [
+        "cohomology:93:2"
+      ],
+      "marks": [
+        "assemble-cohomology-counts"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.HV.CountII",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Counts",
+        "kind": "def",
+        "lines": [
+          65,
+          65
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L65-L65",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          65,
+          65
+        ]
+      }
+    },
+    "UpperTheory.V.HV.CountIII": {
+      "references": [
+        "cohomology:93:3"
+      ],
+      "marks": [
+        "assemble-cohomology-counts"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.HV.CountIII",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Counts",
+        "kind": "def",
+        "lines": [
+          67,
+          67
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L67-L67",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          67,
+          67
+        ]
+      }
+    },
+    "UpperTheory.V.HV.CountV": {
+      "references": [
+        "cohomology:93:4"
+      ],
+      "marks": [
+        "assemble-cohomology-counts"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.HV.CountV",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.HeightAndVanishing.Counts",
+        "kind": "def",
+        "lines": [
+          69,
+          69
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L69-L69",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          69,
+          69
+        ]
+      }
+    },
+    "UpperTheory.V.Odd.PsiBound": {
+      "references": [
+        "cohomology:99:1"
+      ],
+      "marks": [
+        "cohomology:99:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Odd.PsiBound",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/OddResidueBounds/ZeroMemUnrHom.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.OddResidueBounds.ZeroMemUnrHom",
+        "kind": "def",
+        "lines": [
+          97,
+          103
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/OddResidueBounds/ZeroMemUnrHom.lean#L97-L103",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          97,
+          103
+        ]
+      }
+    },
+    "UpperTheory.V.ML.iv": {
+      "references": [
+        "cohomology:100:1"
+      ],
+      "marks": [
+        "cohomology:100:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.ML.iv",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/Iv.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PrimitiveFrobeniusFixed.Iv",
+        "kind": "theorem",
+        "lines": [
+          4,
+          6
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/Iv.lean#L4-L6",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.V.ML.kolStep": {
+      "references": [
+        "cohomology:102:1"
+      ],
+      "marks": [
+        "cohomology:102:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.ML.kolStep",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/KolStep.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.PrimitiveFrobeniusFixed.KolStep",
+        "kind": "theorem",
+        "lines": [
+          135,
+          259
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/KolStep.lean#L135-L259",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.V.FW.sinnott": {
+      "references": [
+        "cohomology:108:1"
+      ],
+      "marks": [
+        "cohomology:108:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.FW.sinnott",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/FerreroWashingtonIndex/Sinnott.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.FerreroWashingtonIndex.Sinnott",
+        "kind": "theorem",
+        "lines": [
+          10,
+          44
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/FerreroWashingtonIndex/Sinnott.lean#L10-L44",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.V.Z.J.NumberU3U_s": {
+      "references": [
+        "cohomology:116:1"
+      ],
+      "marks": [
+        "cohomology:116:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Z.J.NumberU3U_s",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.NumberU3US",
+        "kind": "def",
+        "lines": [
+          30,
+          45
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean#L30-L45",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          30,
+          45
+        ]
+      }
+    },
+    "UpperTheory.V.Z.J.OneCharU_s": {
+      "references": [
+        "cohomology:133:1"
+      ],
+      "marks": [
+        "cohomology:133:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Z.J.OneCharU_s",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.NumberU3US",
+        "kind": "def",
+        "lines": [
+          49,
+          59
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean#L49-L59",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          49,
+          59
+        ]
+      }
+    },
+    "UpperTheory.V.Alg.LemmaM": {
+      "references": [
+        "cohomology:137:1"
+      ],
+      "marks": [
+        "cohomology:137:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Alg.LemmaM",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/OrbitVanishingLocal.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.CommutativeAlgebra.OrbitVanishingLocal",
+        "kind": "def",
+        "lines": [
+          111,
+          118
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/OrbitVanishingLocal.lean#L111-L118",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          111,
+          118
+        ]
+      }
+    },
+    "UpperTheory.V.Hi.hida_unitary_of_printed_hida": {
+      "references": [
+        "cohomology:144:1"
+      ],
+      "marks": [
+        "cohomology:144:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Hi.hida_unitary_of_printed_hida",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/THidaU.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.THidaU",
+        "kind": "theorem",
+        "lines": [
+          38,
+          48
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/THidaU.lean#L38-L48",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.V.Z.Kato.Final.zetaUr": {
+      "references": [
+        "cohomology:145:1"
+      ],
+      "marks": [
+        "cohomology:145:1"
+      ],
+      "passages": [],
+      "topics": [
+        "cohomology"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Z.Kato.Final.zetaUr",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/KatoQuadraticCharacters/UnramifiedZeta/ZetaUr.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.KatoQuadraticCharacters.UnramifiedZeta.ZetaUr",
+        "kind": "theorem",
+        "lines": [
+          9,
+          12
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/KatoQuadraticCharacters/UnramifiedZeta/ZetaUr.lean#L9-L12",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift": {
+      "references": [
+        "cohomology:152:1"
+      ],
+      "marks": [
+        "cohomology:152:1"
+      ],
+      "passages": [],
+      "topics": [
+        "galois"
+      ],
+      "source": {
+        "name": "UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift",
+        "file": "src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GaloisRepresentationsOfThetaLift.lean",
+        "module": "Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.GaloisRepresentationsOfThetaLift",
+        "kind": "theorem",
+        "lines": [
+          6,
+          6
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GaloisRepresentationsOfThetaLift.lean#L6-L6",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.GalStar.AwayB": {
+      "references": [
+        "cohomology:160:1"
+      ],
+      "marks": [
+        "cohomology:160:1"
+      ],
+      "passages": [],
+      "topics": [
+        "galois"
+      ],
+      "source": {
+        "name": "UpperTheory.GalStar.AwayB",
+        "file": "src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConjBis.lean",
+        "module": "Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.TypeConditions.WeightsConjBis",
+        "kind": "inductive",
+        "lines": [
+          26,
+          31
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/TypeConditions/WeightsConjBis.lean#L26-L31",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.TP.TLiftK": {
+      "references": [
+        "cohomology:168:1"
+      ],
+      "marks": [
+        "cohomology:168:1"
+      ],
+      "passages": [],
+      "topics": [
+        "galois"
+      ],
+      "source": {
+        "name": "UpperTheory.TP.TLiftK",
+        "file": "src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/HalfIndexLattices/TLiftK.lean",
+        "module": "Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.HalfIndexLattices.TLiftK",
+        "kind": "def",
+        "lines": [
+          12,
+          23
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/HalfIndexLattices/TLiftK.lean#L12-L23",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          12,
+          23
+        ]
+      }
+    },
+    "UpperTheory.TP.K.tLiftK": {
+      "references": [
+        "cohomology:168:2"
+      ],
+      "marks": [
+        "cohomology:168:2"
+      ],
+      "passages": [],
+      "topics": [
+        "galois"
+      ],
+      "source": {
+        "name": "UpperTheory.TP.K.tLiftK",
+        "file": "src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/ThetaKernels/TLiftK.lean",
+        "module": "Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.ThetaKernels.TLiftK",
+        "kind": "theorem",
+        "lines": [
+          4,
+          5
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/ThetaParseval/ThetaKernels/TLiftK.lean#L4-L5",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Top.IsChiField": {
+      "references": [
+        "hosts:5:1"
+      ],
+      "marks": [
+        "hosts:5:1"
+      ],
+      "passages": [],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.IsChiField",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+        "kind": "def",
+        "lines": [
+          19,
+          25
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean#L19-L25",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          19,
+          25
+        ]
+      }
+    },
+    "UpperTheory.Top.WinPair": {
+      "references": [
+        "hosts:18:1"
+      ],
+      "marks": [
+        "hosts:18:1"
+      ],
+      "passages": [],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.WinPair",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+        "kind": "inductive",
+        "lines": [
+          27,
+          37
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean#L27-L37",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "UpperTheory.Top.PageN": {
+      "references": [
+        "hosts:18:2"
+      ],
+      "marks": [
+        "hosts:18:2"
+      ],
+      "passages": [],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "UpperTheory.Top.PageN",
+        "file": "src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean",
+        "module": "Development.AutomorphicArithmetic.CharacterBoxes.ExistsPageN",
+        "kind": "def",
+        "lines": [
+          39,
+          39
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/CharacterBoxes/ExistsPageN.lean#L39-L39",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true,
+        "statement_lines": [
+          39,
+          39
+        ]
+      }
+    },
+    "Formalism.FrobeniusOrbits.ThickExists.noRel_image": {
+      "references": [
+        "hosts:63:1"
+      ],
+      "marks": [
+        "hosts:63:1"
+      ],
+      "passages": [],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "Formalism.FrobeniusOrbits.ThickExists.noRel_image",
+        "file": "src/Formalism/FrobeniusOrbits/FrobeniusOrbitsProofs/ThickExists.lean",
+        "module": "Formalism.FrobeniusOrbits.FrobeniusOrbitsProofs.ThickExists",
+        "kind": "theorem",
+        "lines": [
+          85,
+          144
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/FrobeniusOrbits/FrobeniusOrbitsProofs/ThickExists.lean#L85-L144",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.FrobeniusOrbits.hostThickExists": {
+      "references": [
+        "hosts:64:1"
+      ],
+      "marks": [
+        "hosts:64:1"
+      ],
+      "passages": [],
+      "topics": [
+        "hosts"
+      ],
+      "source": {
+        "name": "Formalism.FrobeniusOrbits.hostThickExists",
+        "file": "src/Formalism/FrobeniusOrbits/FrobeniusOrbitsProofs/ThickExists.lean",
+        "module": "Formalism.FrobeniusOrbits.FrobeniusOrbitsProofs.ThickExists",
+        "kind": "theorem",
+        "lines": [
+          179,
+          334
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/FrobeniusOrbits/FrobeniusOrbitsProofs/ThickExists.lean#L179-L334",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": true
+      }
+    },
+    "Formalism.RiemannHypothesisOfLowerBounds": {
+      "references": [
+        "offpath:60:1"
+      ],
+      "marks": [
+        "offpath:60:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.RiemannHypothesisOfLowerBounds",
+        "file": "src/Formalism/StatementOC.lean",
+        "module": "Formalism.StatementOC",
+        "kind": "def",
+        "lines": [
+          65,
+          71
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/StatementOC.lean#L65-L71",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          65,
+          71
+        ]
+      }
+    },
+    "Formalism.CMTypeGaloisData.RiemannHypothesisOfHalfLinks": {
+      "references": [
+        "offpath:60:2"
+      ],
+      "marks": [
+        "offpath:60:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.CMTypeGaloisData.RiemannHypothesisOfHalfLinks",
+        "file": "src/Formalism/HalfLinks/Statement.lean",
+        "module": "Formalism.HalfLinks.Statement",
+        "kind": "def",
+        "lines": [
+          144,
+          149
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/HalfLinks/Statement.lean#L144-L149",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          144,
+          149
+        ]
+      }
+    },
+    "Formalism.WT.WeightedSieveImpliesRH": {
+      "references": [
+        "offpath:61:1"
+      ],
+      "marks": [
+        "offpath:61:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.WT.WeightedSieveImpliesRH",
+        "file": "src/Formalism/JacobiWeightFamilies/Statement.lean",
+        "module": "Formalism.JacobiWeightFamilies.Statement",
+        "kind": "def",
+        "lines": [
+          57,
+          71
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/JacobiWeightFamilies/Statement.lean#L57-L71",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          57,
+          71
+        ]
+      }
+    },
+    "Formalism.WeightedSieveThreeParameter.WeightedSieveImpliesRHThreeParameter": {
+      "references": [
+        "offpath:61:2"
+      ],
+      "marks": [
+        "offpath:61:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.WeightedSieveThreeParameter.WeightedSieveImpliesRHThreeParameter",
+        "file": "src/Formalism/WideWeightTheorem/Statement.lean",
+        "module": "Formalism.WideWeightTheorem.Statement",
+        "kind": "def",
+        "lines": [
+          66,
+          83
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/WideWeightTheorem/Statement.lean#L66-L83",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          66,
+          83
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthBoundGivesRiemannHypothesis": {
+      "references": [
+        "offpath:62:1"
+      ],
+      "marks": [
+        "offpath:62:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthBoundGivesRiemannHypothesis",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          139,
+          141
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L139-L141",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          139,
+          141
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.RiemannHypothesisOfBalanceAndGrowthData": {
+      "references": [
+        "offpath:62:2"
+      ],
+      "marks": [
+        "offpath:62:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.RiemannHypothesisOfBalanceAndGrowthData",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          131,
+          134
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L131-L134",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          131,
+          134
+        ]
+      }
+    },
+    "Formalism.B.ZetaQuarterPowerCorollary": {
+      "references": [
+        "offpath:65:1"
+      ],
+      "marks": [
+        "offpath:65:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.B.ZetaQuarterPowerCorollary",
+        "file": "src/Formalism/ProductFormula/StatementOCCM.lean",
+        "module": "Formalism.ProductFormula.StatementOCCM",
+        "kind": "def",
+        "lines": [
+          137,
+          151
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/ProductFormula/StatementOCCM.lean#L137-L151",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          137,
+          151
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.characterSumData.AskMainBalance": {
+      "references": [
+        "offpath:68:1"
+      ],
+      "marks": [
+        "offpath:68:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.characterSumData.AskMainBalance",
+        "file": "src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean",
+        "module": "Formalism.SizeWindowBrackets.FirstPrimeNeSecondPrime",
+        "kind": "def",
+        "lines": [
+          98,
+          101
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean#L98-L101",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          98,
+          101
+        ]
+      }
+    },
+    "Formalism.LFunctionChainParameters.characterSumData.colour_balance": {
+      "references": [
+        "offpath:69:1"
+      ],
+      "marks": [
+        "offpath:69:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.characterSumData.colour_balance",
+        "file": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/StronglyIrreducible.lean",
+        "module": "Formalism.SizeWindowBrackets.ChainSlopeWindows.StronglyIrreducible",
+        "kind": "theorem",
+        "lines": [
+          695,
+          765
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/StronglyIrreducible.lean#L695-L765",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false
+      }
+    },
+    "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthInequalityForm": {
+      "references": [
+        "offpath:69:2"
+      ],
+      "marks": [
+        "offpath:69:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthInequalityForm",
+        "file": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "module": "Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis",
+        "kind": "def",
+        "lines": [
+          99,
+          105
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean#L99-L105",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          99,
+          105
+        ]
+      }
+    },
+    "Formalism.DworkPowerSeriesWeights.thmBGauss": {
+      "references": [
+        "offpath:75:1"
+      ],
+      "marks": [
+        "offpath:75:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.DworkPowerSeriesWeights.thmBGauss",
+        "file": "src/Formalism/GaussJetBounds/FinalB.lean",
+        "module": "Formalism.GaussJetBounds.FinalB",
+        "kind": "theorem",
+        "lines": [
+          232,
+          232
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/GaussJetBounds/FinalB.lean#L232-L232",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false
+      }
+    },
+    "Formalism.L2.KerInert.JetsInert": {
+      "references": [
+        "offpath:76:1"
+      ],
+      "marks": [
+        "offpath:76:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.L2.KerInert.JetsInert",
+        "file": "src/Formalism/LocalToGlobal/InertKernelTheory/StatementInt.lean",
+        "module": "Formalism.LocalToGlobal.InertKernelTheory.StatementInt",
+        "kind": "def",
+        "lines": [
+          26,
+          34
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/LocalToGlobal/InertKernelTheory/StatementInt.lean#L26-L34",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          26,
+          34
+        ]
+      }
+    },
+    "Formalism.RankGapBounds.WeightedMeanData.Data.MeanBoundSecondForm": {
+      "references": [
+        "offpath:77:1"
+      ],
+      "marks": [
+        "offpath:77:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.RankGapBounds.WeightedMeanData.Data.MeanBoundSecondForm",
+        "file": "src/Formalism/RankGapBounds/MeanBoundSecondForm.lean",
+        "module": "Formalism.RankGapBounds.MeanBoundSecondForm",
+        "kind": "def",
+        "lines": [
+          187,
+          190
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/RankGapBounds/MeanBoundSecondForm.lean#L187-L190",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          187,
+          190
+        ]
+      }
+    },
+    "Formalism.B.DetGain": {
+      "references": [
+        "offpath:77:2"
+      ],
+      "marks": [
+        "offpath:77:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.B.DetGain",
+        "file": "src/Formalism/ProductFormula/StatementOCCM.lean",
+        "module": "Formalism.ProductFormula.StatementOCCM",
+        "kind": "def",
+        "lines": [
+          157,
+          160
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/ProductFormula/StatementOCCM.lean#L157-L160",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          157,
+          160
+        ]
+      }
+    },
+    "Formalism.ThetaLiftIndependence.DetChain": {
+      "references": [
+        "offpath:79:1"
+      ],
+      "marks": [
+        "offpath:79:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.ThetaLiftIndependence.DetChain",
+        "file": "src/Formalism/ThetaLiftIndependence/Statement.lean",
+        "module": "Formalism.ThetaLiftIndependence.Statement",
+        "kind": "def",
+        "lines": [
+          266,
+          276
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/ThetaLiftIndependence/Statement.lean#L266-L276",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          266,
+          276
+        ]
+      }
+    },
+    "Formalism.ThetaLiftIndependence.DetBlocks": {
+      "references": [
+        "offpath:79:2"
+      ],
+      "marks": [
+        "offpath:79:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "Formalism.ThetaLiftIndependence.DetBlocks",
+        "file": "src/Formalism/ThetaLiftIndependence/Statement.lean",
+        "module": "Formalism.ThetaLiftIndependence.Statement",
+        "kind": "def",
+        "lines": [
+          260,
+          264
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/ThetaLiftIndependence/Statement.lean#L260-L264",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          260,
+          264
+        ]
+      }
+    },
+    "PI.BesselPeriodGGP.BesselPeriodGGP": {
+      "references": [
+        "offpath:80:1"
+      ],
+      "marks": [
+        "offpath:80:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "PI.BesselPeriodGGP.BesselPeriodGGP",
+        "file": "src/Formalism/PeriodIntegrals/BesselPeriodGGP.lean",
+        "module": "Formalism.PeriodIntegrals.BesselPeriodGGP",
+        "kind": "def",
+        "lines": [
+          105,
+          120
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Formalism/PeriodIntegrals/BesselPeriodGGP.lean#L105-L120",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          105,
+          120
+        ]
+      }
+    },
+    "UpperTheory.V.Af.NumberSp4": {
+      "references": [
+        "offpath:81:1"
+      ],
+      "marks": [
+        "offpath:81:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Af.NumberSp4",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AutomorphicForms.CongruenceNumberRankThree",
+        "kind": "def",
+        "lines": [
+          142,
+          151
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean#L142-L151",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          142,
+          151
+        ]
+      }
+    },
+    "UpperTheory.V.Af.CongruenceNumberRankThree": {
+      "references": [
+        "offpath:81:2"
+      ],
+      "marks": [
+        "offpath:81:2"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "UpperTheory.V.Af.CongruenceNumberRankThree",
+        "file": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean",
+        "module": "Development.AutomorphicArithmetic.AutomorphicVarieties.AutomorphicForms.CongruenceNumberRankThree",
+        "kind": "def",
+        "lines": [
+          125,
+          140
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AutomorphicForms/CongruenceNumberRankThree.lean#L125-L140",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false,
+        "statement_lines": [
+          125,
+          140
+        ]
+      }
+    },
+    "GlobalTheory.BigTop.lamLow_of_classicalTheorems": {
+      "references": [
+        "offpath:83:1"
+      ],
+      "marks": [
+        "offpath:83:1"
+      ],
+      "passages": [],
+      "topics": [
+        "off-path"
+      ],
+      "source": {
+        "name": "GlobalTheory.BigTop.lamLow_of_classicalTheorems",
+        "file": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LamLowOfPublished.lean",
+        "module": "Development.AbelianVarietyTheory.Proofs.DivisorProofs.LamLowOfPublished",
+        "kind": "theorem",
+        "lines": [
+          30,
+          48
+        ],
+        "url": "https://github.com/leanprover-community/riemann-hypothesis/blob/8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LamLowOfPublished.lean#L30-L48",
+        "revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
+        "in_proof": false
+      }
+    }
+  }
+}

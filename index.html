@@ -1,0 +1,122 @@
+<!doctype html>
+<html data-view="read" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The argument of a formal proof of the Riemann Hypothesis · The Riemann Hypothesis</title>
+    <meta
+      name="description"
+      content="The argument of a formal proof of the Riemann Hypothesis, by Qui Vincit and Fable, read sentence by sentence beside its Lean."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The argument of a formal proof of the Riemann Hypothesis" />
+    <meta
+      property="og:description"
+      content="By Qui Vincit and Fable. Each phrase opens the Lean that states it."
+    />
+    <meta property="og:url" content="https://wcook04.github.io/riemann-hypothesis-reader/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="describedby" href="/riemann-hypothesis-reader/llms.txt" type="text/plain" />
+    <meta name="author" content="Will Cook" />
+    <meta name="theme-color" content="#f8f0e2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1526" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/riemann-hypothesis-reader/favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("lx-theme");
+          if (stored === "light" || stored === "dark") document.documentElement.setAttribute("data-theme", stored);
+        } catch (e) {}
+      })();
+      // The paper's text waits, hidden but laid out, until its fonts (preloaded below) are in, or
+      // 100 ms at most, so a formula never paints in a fallback face and then shifts.
+      (function () {
+        var root = document.documentElement;
+        if (!document.fonts || !document.fonts.load) return;
+        root.classList.add("fonts-wait");
+        var done = function () {
+          root.classList.remove("fonts-wait");
+        };
+        setTimeout(done, 100);
+        document.addEventListener("DOMContentLoaded", function () {
+          Promise.all(["1em KaTeX_Main", "italic 1em KaTeX_Math", "1em 'STIX Two Text'"].map(function (face) {
+            return document.fonts.load(face);
+          })).then(done, done);
+        });
+      })();
+    </script>
+    <style>html.fonts-wait .paper{visibility:hidden}</style>
+    <script type="module" crossorigin src="/riemann-hypothesis-reader/assets/index-Chu5E-De.js"></script>
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/site-ti3P4-ev.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/aids-Br9z8TL8.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/jsx-runtime-EEj90M9A.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/skeletonView-Bj4C2lH2.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/theme-DJUAPj1X.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/lean-DitoE3Pd.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/data-shuO8Qbu.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/router-Bk4S_1YG.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/papers-Djol1PB1.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/BackControl-BPJD5-N5.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/siteName-CAbio60Y.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/TopBar-BSXdxIgS.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/cite-BN-ExMWT.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/ties--nOkLT86.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/restore-2L8sT8ui.js">
+    <link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/mainGoal-B2TYza2z.js">
+    <link rel="stylesheet" crossorigin href="/riemann-hypothesis-reader/assets/aids-DV8vOBon.css">
+    <link rel="stylesheet" crossorigin href="/riemann-hypothesis-reader/assets/BackControl-D90l99kx.css">
+    <link rel="stylesheet" crossorigin href="/riemann-hypothesis-reader/assets/TopBar-BtQm4BbY.css">
+    <link rel="stylesheet" crossorigin href="/riemann-hypothesis-reader/assets/index-DKuCGjFP.css">
+    <link rel="stylesheet" crossorigin href="/riemann-hypothesis-reader/assets/reader-content-Ca64lykI.css">
+  <link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Main-Bold-Cx986IdX.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Main-Regular-B22Nviop.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Math-Italic-t53AETM-.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/KaTeX_Size3-Regular-gV2CO0n9.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/source-sans-3-latin-wght-normal-Bo_j9asI.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/stix-two-text-latin-400-italic-BLib6pG4.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/stix-two-text-latin-400-normal-Dm29J5Fl.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/assets/stix-two-text-latin-500-normal-QKEzPprE.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/index.json" as="fetch" crossorigin /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/ReaderPage-DCQlvE3u.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/site-ti3P4-ev.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/jsx-runtime-EEj90M9A.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/skeletonView-Bj4C2lH2.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/theme-DJUAPj1X.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/lean-DitoE3Pd.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/data-shuO8Qbu.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/router-Bk4S_1YG.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/BackControl-BPJD5-N5.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/papers-Djol1PB1.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/ties--nOkLT86.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/restore-2L8sT8ui.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/useAlignment-CTEqiHRs.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/labels-DXlsYS1F.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/documents-CH0aJ4Cz.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/purify.es-DQFfKHnu.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/TheoremPlate-6TckCIrs.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/aids-Br9z8TL8.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/summary-CQUNfMTx.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/tokenize-C5yNsREG.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/author-DIZ9df0t.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/RecordPanel-CgUvHmif.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/levels-DmsS_fcS.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/lazy-Bd0y2Ffd.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/topicColours-C9zHkFDM.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/walk-7PXRaS2z.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/map-pane-AraUHRoA.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/readerInput-tMM_8oNw.js" /><link rel="modulepreload" crossorigin href="/riemann-hypothesis-reader/assets/short-C-v3JZbm.js" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/ReaderPage-Brh4dply.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/reader-content-Ca64lykI.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/BackControl-D90l99kx.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/TheoremPlate-DaQYdRUq.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/aids-DV8vOBon.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/reader-page-CVwP9v0D.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/RecordPanel-ChHSg_Aj.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/slice-FtnMEvve.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/lean-DKAl8BTs.css" /><link rel="preload" as="style" crossorigin href="/riemann-hypothesis-reader/assets/map-pane-CiDT2_6C.css" /><link rel="preload" href="/riemann-hypothesis-reader/edition/17c67ee14aecc944ce2507cdc34af5d6a27ae63dbf820a80212d045f1a5c9fbf.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/86317a7de663caf45b3b2cc468d1a7e2fcb98597808b976b1f2a5c27ed0f909e.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/541a2a538b766c1c4f1b55fcfc834192bf792c0318da48bda278846217b9b9ee.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/rh-paper-nodes.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/76f6a042793c623de60b9967c9cbbf8b24574840870a293c92426183ab3a89ea.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/e7658691493d7ac029550d4e691688d5d26f77b6ef34db9573e5363d9f7b44ad.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/paper.txt" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/8ae898752b6db1ce29b9c5ed82a056e899b7da62c92d035c3b72c6db3daddce4.json" as="fetch" crossorigin /><link rel="preload" href="/riemann-hypothesis-reader/edition/ties/short.json" as="fetch" crossorigin /></head>
+  <body>
+    <div id="root"><div class="app"><header class="topbar"><span class="fam-lockup"><a class="fam-lockup__home" href="https://wcook04.github.io/" rel="author" title="All of Will Cook's websites and videos"><img src="/riemann-hypothesis-reader/plectis.svg" alt="" width="26" height="26" /><span class="fam-lockup__owner" translate="no">Will Cook</span></a><span class="fam-lockup__rule" aria-hidden="true"></span><a class="fam-lockup__site" href="/riemann-hypothesis-reader/" aria-label="The Riemann Hypothesis, front page"><svg viewBox="0 0 32 32" aria-hidden="true" class="wordmark__mark"><path d="M4 27 L4 5 M4 27 L28 27" fill="none" stroke-width="2" stroke-linecap="round"></path><path d="M5 26 C10 22 13 17 16 14 C19 11 22 9 27 6" fill="none" stroke-width="2.6" stroke-linecap="round"></path><circle cx="16" cy="14" r="3"></circle></svg><span class="fam-lockup__name" translate="no">The Riemann Hypothesis</span></a></span><nav class="topnav" aria-label="Main"><a class="topnav__job" href="/riemann-hypothesis-reader/read/short">Read</a><a class="topnav__job" href="/riemann-hypothesis-reader/map">Map</a><a class="topnav__job" href="/riemann-hypothesis-reader/compare">Compare</a><a class="topnav__job" href="/riemann-hypothesis-reader/checks">What ran</a><a class="topnav__job topnav__job--quiet" href="/riemann-hypothesis-reader/lean">Lean index</a></nav></header><main id="main" class="app__main"><div data-first-paper style="display:contents"><style>.reader-shape{display:grid;grid-template-columns:minmax(0,var(--reader-measure));justify-content:center;column-gap:var(--reader-gap);align-items:start;padding-inline:var(--space-6)}
+.reader-shape__outline,.reader-shape__side{display:none}
+.reader-shape__strip{height:45px;margin-bottom:var(--space-5);margin-left:-22px;border-bottom:1px solid var(--rule)}
+.reader-shape__text{display:flex;flex-direction:column;gap:14px}
+.reader-shape__text i{display:block;height:13px;background:var(--rule);opacity:.55}
+.reader-shape__text i:first-child{width:62%;height:30px;margin-bottom:var(--space-4)}
+.reader-shape__words{margin:0;font-family:var(--font-sans);font-size:var(--fs-sm);color:var(--ink-3)}
+.reader-shape .account-line{margin:var(--space-4) 0 var(--space-6);font-family:var(--font-sans);font-size:var(--fs-sm);line-height:var(--lh-ui);color:var(--ink-3);text-wrap:pretty}
+.reader-shape .reader-hint{margin:0 0 var(--space-5);padding:var(--space-2) var(--space-3);border-left:2px solid var(--rule-control);font-family:var(--font-sans);font-size:var(--fs-ui);line-height:var(--lh-ui);color:var(--ink-2);text-wrap:pretty}
+.reader-shape .paper.prose{max-width:var(--reader-measure)}
+.reader-shape .part{position:relative;display:flow-root;padding-bottom:var(--space-4)}
+.reader-shape .part__text{content-visibility:visible;contain-intrinsic-block-size:none}
+.reader-shape .part__text>:last-child{margin-bottom:0}
+@media (max-width:700px){.reader-shape{padding-inline:20px}.reader-shape__strip{margin-left:-15px}.reader-shape .account-line{margin:var(--space-3) 0 var(--space-4)}}
+@media (min-width:1024px){.reader-shape{grid-template-columns:minmax(0,min(var(--reader-measure),50vw)) minmax(0,1fr);justify-content:start;column-gap:24px;padding-left:32px;padding-right:0}
+.reader-shape__side{display:block;position:sticky;top:var(--topbar-h);height:calc(100vh - var(--topbar-h));border-left:1px solid var(--rule)}}
+@media (min-width:1280px){.reader-shape{column-gap:var(--reader-gap)}.reader-shape__side{margin-left:16px}}
+@media (min-width:1680px){.reader-shape{grid-template-columns:var(--reader-outline) minmax(0,var(--reader-measure)) minmax(600px,1fr)}
+.reader-shape__outline{display:block}.reader-shape__strip{margin-bottom:var(--space-6)}}
+@media (min-width:1921px){.reader-shape{--fs-read:clamp(18px,calc(18px + (100vw - 1920px)/320),20px);--reader-measure:clamp(680px,calc(680px + (100vw - 1920px)*.117),755px)}}
+@media (min-width:2100px){.reader-shape{grid-template-columns:var(--reader-outline) minmax(0,var(--reader-measure)) minmax(600px,1040px);justify-content:center}}</style><div class="reader-shape"><div class="reader-shape__outline"></div><div><div class="reader-shape__strip"></div><p class="account-line">The argument of a formal proof of the Riemann Hypothesis, by Qui Vincit and Fable. The paper by Qui Vincit and Fable is shared under CC-BY-4.0. An AI agent compared selected passages with the pinned Lean. The comparisons are source readings. Lean kernel checks are reported separately. <a class="pdf-link" href="/riemann-hypothesis-reader/pdf/paper.pdf" target="_blank" rel="noopener">Open PDF, 65 pages</a></p><p class="reader-hint">Select a marked phrase to see its Lean statement and how the two compare.</p><div class="paper prose"><section class="part"><div class="part__text"><p data-line="1">THE ARGUMENT OF ALPÖGE’S FORMAL PROOF OF THE RIEMANN HYPOTHESIS: AN ACCOUNT READ FROM THE LEAN SOURCE QUI VINCIT AND FABLE Abstract. On 20 November 2026 Levent Alpöge released a Lean 4 formalisation, 17 million lines long, of a proof of the Riemann Hypothesis and of its analogue for every Dirichlet L-function, with a note saying that no human-readable proof has been written. We built the archive, twice. It compiles, the five top theorems depend on no axiom beyond the three on which Mathlib rests, and the kernel accepts every theorem, and every definition that is not marked unsafe or partial, of the import closure, 2.7 million declarations in all, replayed from an empty environment by Lean’s own checker and by a program of ours. This paper says what the argument is, as read from the Lean source. The exponent 12 comes from one optimisation: an upper bound, of the shape x/m + m, for a weighted count of prime powers whose Frobenius lies outside a CM type, where m is the length of a chain of theta lifts between definite unitary groups. The bound is a squeeze between two slopes of Hermitian lattices. Divisibility of periods at inert primes, which comes from the height-two formal group of a CM elliptic curve, raises the slopes of lattices of algebraic modular forms. A slope inequality for nearly tight frames of maps, which we state in full, transfers that to a lattice of periods. The slope of that lattice is bounded above by a period computation that returns exactly the main term of the count, through a dimension count and the Chowla–Selberg formula. We describe each step and each input, determine by machine which parts of the archive the final theorem uses, and identify the published theorems on which the proof rests. Contents 1. Introduction 2. What was verified by machine 3. The shape of the proof 4. The analytic half 5. The squeeze between two slopes 6. Divisibility at inert primes 7. The frame: Bessel–Poincaré series 8. The cohomological bound 9. Hosts and the auxiliary characters 10. The published theorems the proof rests on 11. What the final theorem does not use 12. Scope and method 13. Consequences and directions Appendix A. Basis of the statements Appendix B. Reproducing the verification Appendix C. The published results formalised in the archive References Date: 23 November 2026. Version 1.5. Fable is a language model (Claude, Anthropic). Section 12 states who did what. 1 2 3 11 12 15 19 21 22 24 26 27 29 29 30 36 38 51
+2 QUI VINCIT AND FABLE 1. Introduction On 20 November 2026 Levent Alpöge released a proo</p>
+</div></section></div></div><div class="reader-shape__side"></div></div></div><template><style>.reader-shape{display:grid;grid-template-columns:minmax(0,var(--reader-measure));justify-content:center;column-gap:var(--reader-gap);align-items:start;padding-inline:var(--space-6)}
+.reader-shape__outline,.reader-shape__side{display:none}
+.reader-shape__strip{height:45px;margin-bottom:var(--space-5);margin-left:-22px;border-bottom:1px solid var(--rule)}
+.reader-shape__text{display:flex;flex-direction:column;gap:14px}
+.reader-shape__text i{display:block;height:13px;background:var(--rule);opacity:.55}
+.reader-shape__text i:first-child{width:62%;height:30px;margin-bottom:var(--space-4)}
+.reader-shape__words{margin:0;font-family:var(--font-sans);font-size:var(--fs-sm);color:var(--ink-3)}
+.reader-shape .account-line{margin:var(--space-4) 0 var(--space-6);font-family:var(--font-sans);font-size:var(--fs-sm);line-height:var(--lh-ui);color:var(--ink-3);text-wrap:pretty}
+.reader-shape .reader-hint{margin:0 0 var(--space-5);padding:var(--space-2) var(--space-3);border-left:2px solid var(--rule-control);font-family:var(--font-sans);font-size:var(--fs-ui);line-height:var(--lh-ui);color:var(--ink-2);text-wrap:pretty}
+.reader-shape .paper.prose{max-width:var(--reader-measure)}
+.reader-shape .part{position:relative;display:flow-root;padding-bottom:var(--space-4)}
+.reader-shape .part__text{content-visibility:visible;contain-intrinsic-block-size:none}
+.reader-shape .part__text>:last-child{margin-bottom:0}
+@media (max-width:700px){.reader-shape{padding-inline:20px}.reader-shape__strip{margin-left:-15px}.reader-shape .account-line{margin:var(--space-3) 0 var(--space-4)}}
+@media (min-width:1024px){.reader-shape{grid-template-columns:minmax(0,min(var(--reader-measure),50vw)) minmax(0,1fr);justify-content:start;column-gap:24px;padding-left:32px;padding-right:0}
+.reader-shape__side{display:block;position:sticky;top:var(--topbar-h);height:calc(100vh - var(--topbar-h));border-left:1px solid var(--rule)}}
+@media (min-width:1280px){.reader-shape{column-gap:var(--reader-gap)}.reader-shape__side{margin-left:16px}}
+@media (min-width:1680px){.reader-shape{grid-template-columns:var(--reader-outline) minmax(0,var(--reader-measure)) minmax(600px,1fr)}
+.reader-shape__outline{display:block}.reader-shape__strip{margin-bottom:var(--space-6)}}
+@media (min-width:1921px){.reader-shape{--fs-read:clamp(18px,calc(18px + (100vw - 1920px)/320),20px);--reader-measure:clamp(680px,calc(680px + (100vw - 1920px)*.117),755px)}}
+@media (min-width:2100px){.reader-shape{grid-template-columns:var(--reader-outline) minmax(0,var(--reader-measure)) minmax(600px,1040px);justify-content:center}}</style><div class="reader-shape" aria-busy="true"><div class="reader-shape__outline"></div><div><div class="reader-shape__strip"></div><p class="reader-shape__words" role="status">Loading the paper…</p><div class="reader-shape__text"><i></i><i style="width:100%"></i><i style="width:96%"></i><i style="width:98%"></i><i style="width:92%"></i><i style="width:60%"></i><i style="visibility:hidden"></i><i style="width:100%"></i><i style="width:94%"></i><i style="width:97%"></i><i style="width:88%"></i><i style="width:99%"></i><i style="width:45%"></i></div></div><div class="reader-shape__side"></div></div></template><script>(function(){var p=location.pathname,b="/riemann-hypothesis-reader/";if(p===b||p===b+"index.html"||p.indexOf(b+"read/")===0)if(!location.hash&&!location.search&&!history.state)return;var f=document.querySelector("[data-first-paper]");f.replaceWith(f.nextElementSibling.content)})()</script></main></div></div>
+    <noscript>
+      <p style="max-width: 40rem; margin: 4rem auto; font-family: Georgia, serif; line-height: 1.6">
+        The papers, the Lean beside them, the argument map and the comparisons on this site are drawn in the browser and need JavaScript. The paper and its Lean are in the repository under <code>instances/riemann-hypothesis/</code>.
+      </p>
+    </noscript>
+  </body>
+</html>

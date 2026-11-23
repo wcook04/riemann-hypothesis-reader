@@ -1,0 +1,1 @@
+var e={paper:`long`,targets:{},sources:{},references:[]};export{e as default};

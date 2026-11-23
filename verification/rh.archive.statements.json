@@ -1,0 +1,56 @@
+{
+  "command": [
+    "bash",
+    "check.sh"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "This check targets the archive's Statements module and selected types.",
+  "id": "rh.archive.statements",
+  "logs": [
+    {
+      "path": "verify/results/check.txt",
+      "sha256": "f687d9bc6ec787fc091629576d3a32ef170a254472683d83b92a03943615bc2d",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "The statement check, leanchecker and lean4lean all exited with code 0",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "The authors re-elaborated the three main statements, printed axioms for five theorems, and ran both checkers on Statements.",
+  "status": "passed",
+  "targets": [
+    {
+      "name": "riemannHypothesis",
+      "record": "lean.c7d55f018299eab5ea1f4aaf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt#L25"
+    },
+    {
+      "name": "riemannZeta_eq_zero_re",
+      "record": "lean.bb161710466fe8c174a674fa",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt#L26"
+    },
+    {
+      "name": "LFunction_ne_zero_of_half_lt_re",
+      "record": "lean.bfe4cbf575504e78f17bc8df",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt#L27"
+    },
+    {
+      "name": "LFunction_eq_zero_re",
+      "record": "lean.c9295aaec00b94bd2ebe9e83",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt#L28"
+    },
+    {
+      "name": "LFunction_eq_zero_re_of_isPrimitive",
+      "record": "lean.bf9e375e2e8dffe86b8fe4cc",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/check.txt#L29"
+    }
+  ],
+  "tool": "Statement and axiom checks",
+  "where": "The paper authors’ archive run"
+}

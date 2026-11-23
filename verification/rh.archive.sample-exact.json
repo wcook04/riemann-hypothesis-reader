@@ -1,0 +1,34 @@
+{
+  "command": [
+    "bash",
+    "sample-exact.sh"
+  ],
+  "commit": "dd9bfc30bf9fc605251a22aa41004d1e22cc303b",
+  "date": "2026-11-22",
+  "does_not_show": "Each invocation checked one module. The earlier prefix-wide processes still ended at the memory limit.",
+  "id": "rh.archive.sample-exact",
+  "logs": [
+    {
+      "path": "verify/results/sample-exact.txt",
+      "sha256": "bac7e2a112910743d6bedc483ad1a454fd951b11aab3e657d1b9cbc252caf203",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/sample-exact.txt"
+    },
+    {
+      "path": "verify/results/sample-prefixes.txt",
+      "sha256": "c0c5583d9803db392e42a50bfbb1ba29794ecf0577e1350d11733f11317c0940",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/sample-prefixes.txt"
+    },
+    {
+      "path": "verify/results/file-times.txt",
+      "sha256": "9ddfd2f121ae6b07cf1ddb0cdcb4c756f1668bdbbf29de3a57294034069f71cf",
+      "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/verify/results/file-times.txt"
+    }
+  ],
+  "outcome": "Both checkers exited with code 0 on all 30 modules",
+  "record_type": "upstream_run_observation",
+  "repository": "https://github.com/vincitamore/riemann-lean-account",
+  "shows": "Individual checks covered PlaneCoefficients and 29 modules beneath its name.",
+  "status": "passed",
+  "tool": "One-module follow-up by both checkers",
+  "where": "The paper authors’ archive run"
+}

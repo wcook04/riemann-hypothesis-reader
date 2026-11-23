@@ -1,0 +1,2 @@
+import{i as e,o as t}from"./site-ti3P4-ev.js";import{n}from"./router-Bk4S_1YG.js";var r=t();function i(){return(0,r.useEffect)(()=>{n({view:`read`,stage:e.slot},{replace:!0})},[]),null}export{i as FrontPage};
+//# sourceMappingURL=FrontPage-CXMS9gAa.js.map
