@@ -1,0 +1,3 @@
+import{o as e}from"./site-BaqvNCL8.js";var t=e(),n=`topic-colours`;function r(e){let t=(e??[]).filter(e=>e.light&&e.dark);if(!t.length)return``;let n=e=>t.map(t=>`--tone-${t.tone}: ${t[e]};`).join(` `);return[`:root { ${n(`light`)} }`,`:root[data-theme="dark"] { ${n(`dark`)} }`,`@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { ${n(`dark`)} } }`,...t.map(e=>`[data-tone="${e.tone}"] { --tone: var(--tone-${e.tone}); }`)].join(`
+`)}function i(e){let i=r(e);(0,t.useEffect)(()=>{if(typeof document>`u`)return;let e=document.getElementById(n);i?(e||(e=document.createElement(`style`),e.id=n,document.head.appendChild(e)),e.textContent!==i&&(e.textContent=i)):e?.remove()},[i])}export{i as t};
+//# sourceMappingURL=topicColours-brh1YgDm.js.map
