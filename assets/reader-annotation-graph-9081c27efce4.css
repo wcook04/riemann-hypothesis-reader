@@ -1,0 +1,21 @@
+/* From the shared reader prose and paired graph styles. */
+:root .passage-annotation .passage-annotation__text { font: 400 var(--fs-read) / var(--lh-read) var(--font-serif); }
+.map-pane__paired > .map-pane__local { max-height: none; }
+.fg__card.is-subject::before { inset: 0 auto 0 0; border-radius: 7px 0 0 7px; }
+
+/* Annotation and Lean share the pane with the width-fitted dependency graph. */
+.map-pane__paired {
+  --paired-graph-size: var(--paired-graph-paint, calc(40% - var(--paired-graph-chrome, 0px)));
+  --paired-graph-reserve: min(calc(var(--paired-graph-size) + var(--paired-graph-chrome, 0px)), max(40%, calc(100% - 9rem)));
+}
+.map-pane__paired > .lean-page { max-height: calc(100% - var(--paired-graph-reserve)); }
+.map-pane__paired > .map-pane__local { min-height: var(--paired-graph-reserve); }
+.map-pane__paired .passage-annotation {
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  border-top: 0;
+}
+/* Published builds whose markup still places the passage note after the code. */
+.map-pane__paired .lean-block:has(> .passage-annotation:not(:first-child)) { display: flex; flex-direction: column; }
+.map-pane__paired .lean-block > .passage-annotation { order: -1; }
+.map-pane__paired .lean-block:has(> .passage-annotation:not(:first-child)) > .lean-fold { align-self: flex-start; }
