@@ -1,1 +1,1 @@
-{"short": "Existence of an eligible eigensystem", "lean": [{"name": "Formalism.MainNotions.N.HG", "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN", "line": 1341, "end_line": 1341, "lines": [1341, 1341], "relation": "part", "note": ""}], "statements": []}
+{"short": "Existence of a lift eigensystem with the required parameter", "lean": [{"name": "Formalism.MainNotions.N.HG", "module": "Formalism.SharpRestriction.LevelLetterCocycles.DataN", "line": 1341, "end_line": 1341, "lines": [1341, 1341], "relation": "part", "note": ""}], "statements": []}
