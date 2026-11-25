@@ -4,40 +4,40 @@
   "lean_revision": "8b83d5e7b319ebc7b3be6e59ce3411ba2b09d116",
   "notes": {
     "Deduction.zeroFree_of_rpow_window": {
-      "text": "The positivity in `CharFamily` applies to the weights on the characters. The real summands that `Gm` adds, and its prime-power coefficients, may have either sign. The last line calls `windowHyp_of_rpow` to turn the one-sided bound into the integral hypothesis needed by `lemmaL`."
+      "text": "`CharFamily` asks for positive weights on the characters, not positive prime-power coefficients or positive values of $G_F$. Its members are non-principal characters or the character of modulus one, for which the zeta correction is used instead. On the window take the non-negative majorant $R(y)=|C|y^\\theta$; then $\\int_Y^{Y^{1+\\omega}}R(y)y^{-\\theta-1}\\,dy=|C|\\omega\\log Y\\le Y^\\eta$ for any fixed $\\eta>0$ and sufficiently large $Y$. This is `windowHyp_of_rpow`; under $v=\\log y$, $U=\\log Y$, the integral becomes $\\int_U^{(1+\\omega)U}R(e^v)e^{-\\theta v}\\,dv\\le e^{\\eta U}$, the bound used in `lemmaL`."
     },
     "Deduction.landau_window": {
-      "text": "Read the two patterns after `rcases` as geometric conditions on the poles. The first gives a pole-free disk at the real center $\\sigma$ and a pole whose horizontal distance from $\\sigma$ is smaller than the disk’s radius. The second gives a disk at $\\sigma$ containing just one pole, on the real axis.\n\nLine 88 gets the estimate that will serve both branches. For each requested lower cutoff it gives a later log-window start $U$ and one differentiation order $k\\ge U$. The same $k$ works for every vertical shift, which lets the next lines choose the shift after inspecting the poles."
+      "text": "Put $T_k(s)=(-1)^k\\Phi^{(k)}(s)/k!$ and $E=\\sigma-\\theta$. A pole of residue $c$ at $\\rho$ contributes $c/(s-\\rho)^{k+1}$ to this coefficient. In the shifted-centre case one bounds the real-centre coefficient and the shifted holomorphic remainder by Cauchy's estimate; in the real-pole case the positive residue gives a lower bound for $\\operatorname{Re}T_k(\\sigma)$ directly. Thus the estimate of `landau_window_key` in either case would imply $a/d^k\\le M/r'^k+Ae^{\\eta U}/E^k$, where $a>0$, $d$ is the distance to the isolated pole and $d<r'\\le E$. After multiplication by $d^k$, the right side tends to zero for $0<\\eta<\\log(r'/d)$, since $U\\le k$ and $k$ can be arbitrarily large; the left side is the fixed number $a$."
     },
     "Formalism.HN.TheoremF": {
-      "text": "In lines 61–62, `muDef` is the target lattice’s mean slope. Compare the conclusion with `TheoremFSharp` in the same file. The proof of `theoremF_of_sharp` obtains the displayed version by subtracting $\\log |I|$ from the sharp lower bound, since the nonempty index set has $|I|\\ge 1$."
+      "text": "If $c(\\tau)$ is the fraction of the slopes of $P$ strictly below $\\bar\\mu-\\tau$ (counted with rank multiplicity), each slope $\\lambda$ contributes to $\\int_0^{HH}c(\\tau)\\,d\\tau$ for an interval of length $(\\bar\\mu-\\lambda)_+$, since $\\mu_{\\min}(P)\\ge\\bar\\mu-HH$. The integral is thus the mean of the positive deficits, which is at least $\\bar\\mu-\\mu(P)$. The rank estimate bounds $c(\\tau)$ by $\\min(1,w(\\tau))$, where $w(\\tau)=(1-\\delta_F)^{-1}(\\eta_F+4\\sqrt{e_F}+4u_F/(u_F+\\tau))$, the quotient being zero for $u_F=0$. The cap is useful near $\\tau=0$; `layer_cake_formula` uses it, and the proof then bounds its integral by $\\int_0^{HH}w(\\tau)\\,d\\tau$, giving the two terms in parentheses in line 62. This already proves `TheoremFSharp` under the same hypotheses; `theoremF_of_sharp` weakens it by subtracting $\\log|I|\\ge0$, using only the nonemptiness of $I$. No part of the filtration or frame argument produces that term. This is the form of (Slope) used in [Section 5.2](pdf#subsection.5.2)."
     },
     "Formalism.LFunctionChainParameters.WeightedSlopeBounds.key_identity5": {
-      "text": "`Lam5` is the lower bound for the logarithm of the level in `Count5`. It includes the counting error with a minus sign, so subtracting `sumA` times `Lam5` gives the added error on the right. The proof unfolds `Lam5` and obtains the equality by a linear combination of the earlier `key_identity`."
+      "text": "`SDiv` is the sum $m\\sum_t(\\operatorname{ph}(a_t)-a_t\\log\\Omega)$, `sumA` is $\\sum_t a_t$, and `Lam5` is the numerical lower-bound expression in `Count5`, not the actual $\\log T(u)$. The lemma needs only $v>0$, $f>0$ and positive weights at the chosen translate: it invokes the earlier `key_identity` and unfolds the changed level expression, without using the inequalities of `Count5`. Its use in `Ga_bound5` is to identify `K5v5` with `Main u0 + K0v5`, separating the exact main term from the counting, divisor, exponent and source-slope errors. The actual level is compared with `Lam5` earlier, in `s_lower5`."
     },
     "UpperTheory.Top.VVle": {
-      "text": "For each prime $\\ell$ and twist $1\\le e<t$, the first clause requires finite $\\mathbb Z_\\ell$-length for the classes that restrict to zero at every place above $\\ell$. In the second clause, toNat reads those finite lengths as integers before the sum over an arbitrary finite set of primes."
+      "text": "In `VVle` the first conjunct excludes infinite length separately for every prime and every $1\\le e<t$. This must precede the numerical inequality: `shaLen` takes values in $\\mathbb N\\cup\\{\\infty\\}$ and `toNat` would otherwise send $\\infty$ to zero. The lemma `VVle.mono` also shows that a bound for a larger twist cutoff can be used for a smaller one, by nonnegativity of the lengths; no equality of the two cutoffs is required."
     },
     "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at": {
-      "text": "Read IsRankRPart over the fraction field as the decomposition of the lift into a rank-$r$ summand $\\rho$ and the prescribed characters. The Selmer term sPi uses $\\rho$ twisted by the inverse of the first character, with coefficients in the quotient of the fraction-field space by its lattice."
+      "text": "`IsRankRPart` gives the splitting $r_\\pi\\otimes K\\simeq\\rho\\oplus\\bigoplus_{c=1}^{t}\\chi_c$ over $K=\\operatorname{Frac}(\\mathcal O)$, where $t$ is the block width `R.t`; the integral representation need not split. The Selmer group in `sPi` has coefficients $(K/\\mathcal O)^r$ with action $\\rho\\otimes\\chi_1^{-1}$. The lengths of torsion modules over $\\mathcal O$ are divided by $\\operatorname{len}_{\\mathcal O}(\\mathcal O/\\ell\\mathcal O)$, so the valuation is normalised by $v_\\ell(\\ell)=1$. In particular for a finite $\\mathcal O$-module $A$, this normalised length is $\\operatorname{len}_{\\mathbb Z_\\ell}(A)/[K:\\mathbb Q_\\ell]$: expanding a twisted $K/\\mathcal O$ coefficient using a $\\mathbb Z_\\ell$-basis of $\\mathcal O$ introduces no field-degree factor in the final normalised bound. `CongBound_at` is the bound as a predicate, with matching weights, a good lift, and a Hecke-compatible Galois family at every eigensystem as additional hypotheses."
     },
     "UpperTheory.Top.supplyChi": {
-      "text": "The goal left by the call to supplyOfAdm is to supply admissible ranks. The proof substitutes the scale's value of $\\varepsilon$, then uses admissibleClassesTwistedChar to obtain ranks with the required sizes and admissibility for the input field."
+      "text": "The result of `supplyChi` concerns a host carrying the rank and level data, not just a cyclotomic field with the correct ramification. In `supplyOfAdm` the remaining hypothesis is that for every preliminary field datum of the prescribed sizes there are ranks with `RankVal` and `admitted`; the latter says that the preliminary datum can be extended to a host for every choice of the indicated level data. The theorem `admissibleClassesTwistedChar` supplies this with a lower bound on $x$ independent of the preliminary field. The proof of `supplyChi` substitutes the equality of the two $\\varepsilon$ parameters and applies that theorem, leaving the prime selection and the host construction to `supplyOfAdm`."
     },
     "UpperTheory.Top.PairEx": {
-      "text": "Fix the modulus, $\\varepsilon$ and the window exponent before reading the large-$Y$ quantifier. Each $Y$ gets one pair that works throughout its window. The existence proof picks $q$ from a nonempty set of first primes, then $d$ from a nonempty set that depends on that $q$."
+      "text": "First choose $q$ in the progression $3\\pmod8$, good for all the required $q$-twists. With $q$ fixed, the $d$-choice must treat both the original base characters and their $q$-twists, so as to supply the two remaining nontrivial choices of $(i,j)$. Put $z=Y^{\\varepsilon/5}$; the progression now has modulus $16q\\prod_{3\\le p\\le z,\\ p\\ \\mathrm{prime}}p$ and is $7$ modulo $16$ and $-1$ at the odd factors, a reduced residue class. Its modulus has logarithm $O(z)$, and the upper endpoint $U=\\exp(z(\\log Y)^2)$ has $\\log U=z(\\log Y)^2$, leaving room for the prime number theorem in progressions used here, whose size condition is $\\log U\\ge C_0\\log M\\log\\log M$ for progression modulus $M$. The counting argument leaves at least half of the first family, and at least half of the second family for each good first prime; this gives a single pair good throughout the window, not two independently selected primes."
     },
     "Formalism.MainNotions.LocalQuadraticParts.adm2": {
-      "text": "For each allowed pair of inputs $\\phi,F$, the equality supplies a coefficient-field value for the column period. If this value is nonzero, its valuation is at least the rounded exponent used to divide the lattice at $w$."
+      "text": "For a word $u$ and place $w$, the form ranges over `L.NuLat u`, and $F$ ranges over the integral test vectors in `Mtilde (muAt w)` that also lie in `V0 (muAt w)`. The existential $y$ first identifies the complex column period with an element of the coefficient field; it is this element whose valuation is taken. Here `sg` is $g(u,w)$ and `ur` multiplies it by the ramification index, so the bound on a nonzero $y$ is precisely $v_w(y)\\ge\\lfloor e_w g(u,w)\\rfloor$. The next lemma uses $\\lfloor r\\rfloor\\le r$ to pass from the unrounded valuation bound to this predicate."
     },
     "Formalism.HN.frameB_share": {
-      "text": "Count each entry below $s-\\tau$ as a deficit of at least $u+\\tau$ from the common upper bound $s+u$. The mean bound allows a total deficit of at most $u$ times the number of entries. In the next lemma, counting slopes below the cut gives the rank lost at the filtration step."
+      "text": "The variables `x i j` are real numbers, not lattice vectors, and `m i` counts entries with multiplicity. To apply the lemma to the lattice, put $n_K=[K:\\mathbb Q]$ and $c_K=-\\log2+\\log|d_K|/n_K$ as in [Section 5.1](pdf#subsection.5.1). For an entry $\\lambda_{ij}$ of the unnormalised `slopeList` of the underlying $\\mathbb Z$-lattice, use $x_{ij}=2\\lambda_{ij}+c_K-h_i$; the threshold passed to `hnStep` is therefore $(s-\\tau+h_i-c_K)/2$. By `frameB_count_lt`, the number of entries strictly below this threshold is the difference of the $\\mathbb Z$-ranks of the original and retained lattices. Each is $n_K$ times its $K$-rank, so the bound for the fraction lost is unchanged."
     },
     "UpperTheory.Top.divinN_of_hypV": {
-      "text": "The tuple from vvRecord has three components. The proof uses finiteness to apply the link estimate, passes summability to divinN_at, and passes the numerical bound to that lemma after enlarging it to $b$."
+      "text": "The threshold is the maximum of those for `HypV`, `LinkN`, equality of the ranks $d_j=D_0$, the inequality $(\\log x)^2\\le x^\\varepsilon$ and the scale identities. From `vvRecord` the first component (finiteness) is used to specialise `LinkN`, the second (summability) to apply its local inequality, and the third to bound the series by $\\sqrt b\\le b$. The last line uses the family scale identities to apply the logarithmic inequality at the common $x$. This gives one constant $|C|+1$ for all members of the family and all lifts above the threshold."
     },
     "Formalism.LFunctionChainParameters.LChain.SizeData₂": {
-      "text": "Unfold this proposition to see the eleven clauses imposed on one chain datum at the chosen scale. ChainTied supplies them together, and each_unit_bound_statement uses them to bound ASK by the sum of a main term and an error for each outer index."
+      "text": "There are two declarations with the short name `SizeData₂`. The one in `BasicNotions` records the arithmetic data used to define the rescaled lattice; the one here in `LChain` is a conjunction of inequalities on numerical data `Dd`. In `TieLocal` the ranks, slopes, level primes, height bounds and finite-place sums of `Dd` are identified with those of the constructed lattices; `each_unit_bound_statement` needs only the eleven numerical hypotheses and gives $\\mathrm{ASK}(u_0)\\le\\mathrm{MAIN}(u_0)+\\mathrm{ErrX5at}(u_0)$ for each $u_0$. The identification with the analytic count and the bound on this explicit error are further conditions of the application."
     }
   },
   "sources": {
@@ -45,7 +45,7 @@
       {
         "title": "The positive weights in the family",
         "markdown": "**[read]** `CharFamily` (`Development/AutomorphicArithmetic/DedekindLFunctions/CharFamily.lean:24`) has only `a i > 0` and `N i = 1 ∨ χ i ≠ 1`: no coefficient positivity.",
-        "reading_note": "The positivity in `CharFamily` applies to the weights on the characters. The real summands that `Gm` adds, and its prime-power coefficients, may have either sign. The last line calls `windowHyp_of_rpow` to turn the one-sided bound into the integral hypothesis needed by `lemmaL`.",
+        "reading_note": "`CharFamily` asks for positive weights on the characters, not positive prime-power coefficients or positive values of $G_F$. Its members are non-principal characters or the character of modulus one, for which the zeta correction is used instead. On the window take the non-negative majorant $R(y)=|C|y^\\theta$; then $\\int_Y^{Y^{1+\\omega}}R(y)y^{-\\theta-1}\\,dy=|C|\\omega\\log Y\\le Y^\\eta$ for any fixed $\\eta>0$ and sufficiently large $Y$. This is `windowHyp_of_rpow`; under $v=\\log y$, $U=\\log Y$, the integral becomes $\\int_U^{(1+\\omega)U}R(e^v)e^{-\\theta v}\\,dv\\le e^{\\eta U}$, the bound used in `lemmaL`.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L42-L42",
         "authors": [
           "Qui Vincit",
@@ -63,7 +63,7 @@
       {
         "title": "The two cases of the pole argument",
         "markdown": "4. **[read]** `landau_dichotomy`: given ρ₀ ∈ Z with Re ρ₀ > θ, either (a) B(σ, D), D ≤ σ − θ, is pole-free while some pole has σ − Re ρ₁ < D, or (b) the nearest pole to σ is a real β > θ, alone in B(σ, r), σ − β < r ≤ σ − θ.",
-        "reading_note": "Read the two patterns after `rcases` as geometric conditions on the poles. The first gives a pole-free disk at the real center $\\sigma$ and a pole whose horizontal distance from $\\sigma$ is smaller than the disk’s radius. The second gives a disk at $\\sigma$ containing just one pole, on the real axis.",
+        "reading_note": "Let $D$ be the distance from $\\sigma$ to the nearest pole, truncated at $\\sigma-\\theta$. If some pole has horizontal distance $\\sigma-\\operatorname{Re}\\rho<D$, move the centre to near its height; by avoiding ties one obtains a unique nearest pole at distance $d<D$, whereas the disc of radius $D$ at $\\sigma$ contains no pole. If there is no such pole, the assumed pole to the right of $\\theta$ implies $D<\\sigma-\\theta$, and a nearest pole must be the real point $\\beta=\\sigma-D$: otherwise its horizontal distance would be less than $D$. In the first case the real-centre Taylor term is of smaller order than the shifted pole term; in the second case the residue is positive and no shift is needed.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L54-L54",
         "authors": [
           "Qui Vincit",
@@ -79,7 +79,7 @@
       {
         "title": "Why the argument is windowed",
         "markdown": "*[inferred]* Only T_k with k → ∞ are used, each seeing g through a kernel centred near u ≈ (1 + δ/2)U, so one window per k, beyond every point, suffices. The off-window mass must fall below σ^{−k} although |g| may reach C₀e^{2u}; tilting achieves this only if the window's log-length δU is proportional to U, and then σ ≈ 36/δ², which blows up as δ → 0. Windows [Y, CY] would fail; any fixed λ > 1 works.",
-        "reading_note": "Line 88 gets the estimate that will serve both branches. For each requested lower cutoff it gives a later log-window start $U$ and one differentiation order $k\\ge U$. The same $k$ works for every vertical shift, which lets the next lines choose the shift after inspecting the poles.",
+        "reading_note": "On the logarithmic window $[U,(1+\\omega)U]$, $U=\\log Y$, choose $k=\\lceil(1+\\omega/2)\\sigma U\\rceil$ so the kernel $w_k(v)=v^ke^{-\\sigma v}/k!$ peaks near the middle, at $v=k/\\sigma$. What is needed outside this window is not merely small kernel mass: the preliminary bound for $|G_F(e^v)|$ is $C_0e^{2v}$, and `landau_tails` chooses $\\sigma$ large in terms of $\\omega$ so that the integral of $e^{2v}w_k(v)$ off the window is $O(\\sigma^{-k})$. On the window the exponential series gives $w_k(v)\\le e^{-\\theta v}(\\sigma-\\theta)^{-k}$, so the integral against the majorant costs at most $e^{\\eta U}(\\sigma-\\theta)^{-k}$. The same order $k\\ge U$ works at every height, and later windows provide arbitrarily large such orders.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/landau-hosts.md#L63-L63",
         "authors": [
           "Qui Vincit",
@@ -113,7 +113,7 @@
       {
         "title": "Theorem F and its sharper form",
         "markdown": "**Statement.** `TheoremF` (StatementFrameF.lean:26) and `TheoremFSharp` (:64) have identical hypotheses (third reading §10). **[read]** Their conclusions are\n\n    s - log |I| - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- F\n    s           - (1-δ)⁻¹ * (4u·log(1 + HH/u) + (η + 4√e)·HH) ≤ muDef b' X' cc        -- FSharp",
-        "reading_note": "In lines 61–62, `muDef` is the target lattice’s mean slope. Compare the conclusion with `TheoremFSharp` in the same file. The proof of `theoremF_of_sharp` obtains the displayed version by subtracting $\\log |I|$ from the sharp lower bound, since the nonempty index set has $|I|\\ge 1$.",
+        "reading_note": "If $c(\\tau)$ is the fraction of the slopes of $P$ strictly below $\\bar\\mu-\\tau$ (counted with rank multiplicity), each slope $\\lambda$ contributes to $\\int_0^{HH}c(\\tau)\\,d\\tau$ for an interval of length $(\\bar\\mu-\\lambda)_+$, since $\\mu_{\\min}(P)\\ge\\bar\\mu-HH$. The integral is thus the mean of the positive deficits, which is at least $\\bar\\mu-\\mu(P)$. The rank estimate bounds $c(\\tau)$ by $\\min(1,w(\\tau))$, where $w(\\tau)=(1-\\delta_F)^{-1}(\\eta_F+4\\sqrt{e_F}+4u_F/(u_F+\\tau))$, the quotient being zero for $u_F=0$. The cap is useful near $\\tau=0$; `layer_cake_formula` uses it, and the proof then bounds its integral by $\\int_0^{HH}w(\\tau)\\,d\\tau$, giving the two terms in parentheses in line 62. This already proves `TheoremFSharp` under the same hypotheses; `theoremF_of_sharp` weakens it by subtracting $\\log|I|\\ge0$, using only the nonemptiness of $I$. No part of the filtration or frame argument produces that term. This is the form of (Slope) used in [Section 5.2](pdf#subsection.5.2).",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattice-theory.md#L25-L28",
         "authors": [
           "Qui Vincit",
@@ -131,7 +131,7 @@
       {
         "title": "Where the two main terms agree",
         "markdown": "- `key_identity` (`Formalism/RankGapBounds/RankGapProofs/WeightedMeanData.lean:170`) and `key_identity5` (`Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean:105`): SDiv − sumA·Lam5 + m·sumA·lg = Main(u0) + sumA·cCount(La + m²La/k), exactly. Here Lam5 is `Count5`'s lower bound for log T. **proved-by**",
-        "reading_note": "`Lam5` is the lower bound for the logarithm of the level in `Count5`. It includes the counting error with a minus sign, so subtracting `sumA` times `Lam5` gives the added error on the right. The proof unfolds `Lam5` and obtains the equality by a linear combination of the earlier `key_identity`.",
+        "reading_note": "`SDiv` is the sum $m\\sum_t(\\operatorname{ph}(a_t)-a_t\\log\\Omega)$, `sumA` is $\\sum_t a_t$, and `Lam5` is the numerical lower-bound expression in `Count5`, not the actual $\\log T(u)$. The lemma needs only $v>0$, $f>0$ and positive weights at the chosen translate: it invokes the earlier `key_identity` and unfolds the changed level expression, without using the inequalities of `Count5`. Its use in `Ga_bound5` is to identify `K5v5` with `Main u0 + K0v5`, separating the exact main term from the counting, divisor, exponent and source-slope errors. The actual level is compared with `Lam5` earlier, in `s_lower5`.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/main-term.md#L170-L170",
         "authors": [
           "Qui Vincit",
@@ -147,9 +147,9 @@
     ],
     "UpperTheory.Top.VVle": [
       {
-        "title": "What the cohomological length measures",
+        "title": "Why finiteness is a separate conjunct",
         "markdown": "- `Sha D e` is `Sha1 (qzTw D e)`. These are the classes in H¹(G_S, ℚ_ℓ/ℤ_ℓ(−e)) over E that are trivial at every place above ℓ; S is the set of those places. `shaLen` is the ℤ_ℓ-length (`Formalism/GaloisCohomology/Statement.lean:54–78`). **read**",
-        "reading_note": "For each prime $\\ell$ and twist $1\\le e<t$, the first clause requires finite $\\mathbb Z_\\ell$-length for the classes that restrict to zero at every place above $\\ell$. In the second clause, toNat reads those finite lengths as integers before the sum over an arbitrary finite set of primes.",
+        "reading_note": "In `VVle` the first conjunct excludes infinite length separately for every prime and every $1\\le e<t$. This must precede the numerical inequality: `shaLen` takes values in $\\mathbb N\\cup\\{\\infty\\}$ and `toNat` would otherwise send $\\infty$ to zero. The lemma `VVle.mono` also shows that a bound for a larger twist cutoff can be used for a smaller one, by nonnegativity of the lengths; no equality of the two cutoffs is required.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L65-L65",
         "authors": [
           "Qui Vincit",
@@ -165,9 +165,9 @@
     ],
     "GlobalTheory.IndefiniteRowSideFullHecke.BaseSizes.CongBound_at": [
       {
-        "title": "Where the congruence bound comes from",
+        "title": "The fraction-field splitting and the length convention",
         "markdown": "- `IsRankRPart` (BS:57) says r_π ⊗ K ≅ ρ ⊕ ⊕_{c=1}^t χ_c. **read**\n- `sPi` (BS:71) is the length of a Bloch–Kato Selmer group of ρ ⊗ χ₁⁻¹ with values in (K/O)^r (`selPi`, QH:380). **read**\n- It is proved in `NLinkE.main_alt_alt` (TPS/AdmissibleParameterEventually.lean:30) by `congruenceBound_extended_of_rationalBound ∘ globalCongruenceCount_of_rootDifference_unit`. **proved-by**",
-        "reading_note": "Read IsRankRPart over the fraction field as the decomposition of the lift into a rank-$r$ summand $\\rho$ and the prescribed characters. The Selmer term sPi uses $\\rho$ twisted by the inverse of the first character, with coefficients in the quotient of the fraction-field space by its lattice.",
+        "reading_note": "`IsRankRPart` gives the splitting $r_\\pi\\otimes K\\simeq\\rho\\oplus\\bigoplus_{c=1}^{t}\\chi_c$ over $K=\\operatorname{Frac}(\\mathcal O)$, where $t$ is the block width `R.t`; the integral representation need not split. The Selmer group in `sPi` has coefficients $(K/\\mathcal O)^r$ with action $\\rho\\otimes\\chi_1^{-1}$. The lengths of torsion modules over $\\mathcal O$ are divided by $\\operatorname{len}_{\\mathcal O}(\\mathcal O/\\ell\\mathcal O)$, so the valuation is normalised by $v_\\ell(\\ell)=1$. In particular for a finite $\\mathcal O$-module $A$, this normalised length is $\\operatorname{len}_{\\mathbb Z_\\ell}(A)/[K:\\mathbb Q_\\ell]$: expanding a twisted $K/\\mathcal O$ coefficient using a $\\mathbb Z_\\ell$-basis of $\\mathcal O$ introduces no field-degree factor in the final normalised bound. `CongBound_at` is the bound as a predicate, with matching weights, a good lift, and a Hecke-compatible Galois family at every eigensystem as additional hypotheses.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L105-L107",
         "authors": [
           "Qui Vincit",
@@ -183,9 +183,9 @@
     ],
     "UpperTheory.Top.supplyChi": [
       {
-        "title": "The construction behind supplyChi",
+        "title": "The uniform rank-existence input to host supply",
         "markdown": "**[proved-by]** `supplyChi : ∀ ψ, VWinAt ψ 401 → HostExW (3/2) (GChi ψ).req` (`CharacterBoxes/SupplyChi.lean:8`), proved as `supplyOfAdm` (`CharacterBoxes/HostOfField.lean:17`). That is `supplyOfAdmOf hostOfField` fed with `admissibleClassesTwistedChar` (`CoprimeRanks/AdmChi.lean:13`). The latter gives ranks with `RankVal` and `admitted R H0`: every choice of level data extends H0 to a `Host` (`CharacterBoxes/Imports.lean:9`). **[read]** `hostOfField` (`HostOfField.lean:8`) takes `PairWin s Y`, `PairGood M ε Y x q d`, `FieldRows` and `admitted`. It returns a host H ⊇ H0 satisfying `HostGood s C8 4 c6 Cb H q0` and `Shares H.TT (x^{−1+ε})`. `supplyOfAdmOf` (`ShortNorms/supplyOfAdmOf.lean:13`) combines it with `fieldChi`, `winPairs` (which calls `QH.pairEx`) and `boundedTw`.",
-        "reading_note": "The goal left by the call to supplyOfAdm is to supply admissible ranks. The proof substitutes the scale's value of $\\varepsilon$, then uses admissibleClassesTwistedChar to obtain ranks with the required sizes and admissibility for the input field.",
+        "reading_note": "The result of `supplyChi` concerns a host carrying the rank and level data, not just a cyclotomic field with the correct ramification. In `supplyOfAdm` the remaining hypothesis is that for every preliminary field datum of the prescribed sizes there are ranks with `RankVal` and `admitted`; the latter says that the preliminary datum can be extended to a host for every choice of the indicated level data. The theorem `admissibleClassesTwistedChar` supplies this with a lower bound on $x$ independent of the preliminary field. The proof of `supplyChi` substitutes the equality of the two $\\varepsilon$ parameters and applies that theorem, leaving the prime selection and the host construction to `supplyOfAdm`.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/hosts.md#L60-L60",
         "authors": [
           "Qui Vincit",
@@ -201,9 +201,9 @@
     ],
     "UpperTheory.Top.PairEx": [
       {
-        "title": "The two prime choices",
+        "title": "Why the second prime has the larger search range",
         "markdown": "`PairEx` (:28) says: for all M ≥ 1, ε < 1/52 and A ≥ 1 there is Y1 such that every Y ≥ Y1 has q, d with `PairGood M ε Y (Y^A) q d`. **[proved-by]** `QH.pairEx` (`MeanSquareBounds/pairEx.lean:112`).",
-        "reading_note": "Fix the modulus, $\\varepsilon$ and the window exponent before reading the large-$Y$ quantifier. Each $Y$ gets one pair that works throughout its window. The existence proof picks $q$ from a nonempty set of first primes, then $d$ from a nonempty set that depends on that $q$.",
+        "reading_note": "First choose $q$ in the progression $3\\pmod8$, good for all the required $q$-twists. With $q$ fixed, the $d$-choice must treat both the original base characters and their $q$-twists, so as to supply the two remaining nontrivial choices of $(i,j)$. Put $z=Y^{\\varepsilon/5}$; the progression now has modulus $16q\\prod_{3\\le p\\le z,\\ p\\ \\mathrm{prime}}p$ and is $7$ modulo $16$ and $-1$ at the odd factors, a reduced residue class. Its modulus has logarithm $O(z)$, and the upper endpoint $U=\\exp(z(\\log Y)^2)$ has $\\log U=z(\\log Y)^2$, leaving room for the prime number theorem in progressions used here, whose size condition is $\\log U\\ge C_0\\log M\\log\\log M$ for progression modulus $M$. The counting argument leaves at least half of the first family, and at least half of the second family for each good first prime; this gives a single pair good throughout the window, not two independently selected primes.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/hosts.md#L73-L73",
         "authors": [
           "Qui Vincit",
@@ -221,7 +221,7 @@
       {
         "title": "The exact integrality statement",
         "markdown": "- `adm2 D L` (`Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean:206`) says: for every word u, place w, φ ∈ `L.NuLat u`, and every F ∈ `Mtilde(muAt w)` that also lies in `V0(muAt w)`, the period `perCol u (muAt w) (jN u φ) F` equals `embLL y` for some y with y = 0 or `⌊ur D w (L.sg u w)⌋ ≤ vAdd (plEq w) y`. **read** `UnroundedValuationBound` (:212) states the same bound without the floor, and `valuation_bound_of_unrounded` (:218) derives `adm2` from it. **read**",
-        "reading_note": "For each allowed pair of inputs $\\phi,F$, the equality supplies a coefficient-field value for the column period. If this value is nonzero, its valuation is at least the rounded exponent used to divide the lattice at $w$.",
+        "reading_note": "For a word $u$ and place $w$, the form ranges over `L.NuLat u`, and $F$ ranges over the integral test vectors in `Mtilde (muAt w)` that also lie in `V0 (muAt w)`. The existential $y$ first identifies the complex column period with an element of the coefficient field; it is this element whose valuation is taken. Here `sg` is $g(u,w)$ and `ur` multiplies it by the ramification index, so the bound on a nonzero $y$ is precisely $v_w(y)\\ge\\lfloor e_w g(u,w)\\rfloor$. The next lemma uses $\\lfloor r\\rfloor\\le r$ to pass from the unrounded valuation bound to this predicate.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/divisibility-trace.md#L13-L13",
         "authors": [
           "Qui Vincit",
@@ -247,7 +247,7 @@
       {
         "title": "How the cut rank is bounded",
         "markdown": "2. *Corank share (Markov).* Let x_ij be the normalised HN slopes of N_i minus h_i. **[proved-by]** Their rank-weighted mean is ≥ s, and each is ≤ s + u (by hypothesis and HNExtreme). **[proved-by]** `frameB_share` (HNP/FrameHermSharpB.lean:25) concludes #{x_ij < s − τ} ≤ (Σ m_i)·u/(u+τ). **[proved-by]** Combined with `frameB_count_lt`, this becomes `hcor`. **[proved-by]** It states that the steps Nt(τ,i) = hnStep(N_i, level s−τ+h_i) satisfy Σ_i(rk N_i − rk Nt) ≤ (u/(u+τ))·Σ_i rk N_i. **[proved-by]**",
-        "reading_note": "Count each entry below $s-\\tau$ as a deficit of at least $u+\\tau$ from the common upper bound $s+u$. The mean bound allows a total deficit of at most $u$ times the number of entries. In the next lemma, counting slopes below the cut gives the rank lost at the filtration step.",
+        "reading_note": "The variables `x i j` are real numbers, not lattice vectors, and `m i` counts entries with multiplicity. To apply the lemma to the lattice, put $n_K=[K:\\mathbb Q]$ and $c_K=-\\log2+\\log|d_K|/n_K$ as in [Section 5.1](pdf#subsection.5.1). For an entry $\\lambda_{ij}$ of the unnormalised `slopeList` of the underlying $\\mathbb Z$-lattice, use $x_{ij}=2\\lambda_{ij}+c_K-h_i$; the threshold passed to `hnStep` is therefore $(s-\\tau+h_i-c_K)/2$. By `frameB_count_lt`, the number of entries strictly below this threshold is the difference of the $\\mathbb Z$-ranks of the original and retained lattices. Each is $n_K$ times its $K$-rank, so the bound for the fraction lost is unchanged.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattice-theory.md#L39-L39",
         "authors": [
           "Qui Vincit",
@@ -263,9 +263,9 @@
     ],
     "UpperTheory.Top.divinN_of_hypV": [
       {
-        "title": "Where the proof spends the cohomological bound",
+        "title": "The three premises supplied by the cohomological bound",
         "markdown": "- `divinN_of_hypV` (`DivinNOfHypV.lean:117`). **proved-by**\n  - `vvRecord` (:17) extracts three facts from `HypV`: `ShaFinOdd`, which discharges the premise of `LinkN`; `Summable`, the premise of `LinkN_at`; and Σ'vvTerm ≤ √b.\n  - The third is weakened by `Real.sqrt_le_self_iff` to Σ'vvTerm ≤ b.\n  - In `divinN_at` (:76), `linarith` closes the goal using hb : Σ' ≤ b together with b ≤ B0 and B0 ≤ x^ε(B0+Nc). So the bound is used, but only in this weaker form.",
-        "reading_note": "The tuple from vvRecord has three components. The proof uses finiteness to apply the link estimate, passes summability to divinN_at, and passes the numerical bound to that lemma after enlarging it to $b$.",
+        "reading_note": "The threshold is the maximum of those for `HypV`, `LinkN`, equality of the ranks $d_j=D_0$, the inequality $(\\log x)^2\\le x^\\varepsilon$ and the scale identities. From `vvRecord` the first component (finiteness) is used to specialise `LinkN`, the second (summability) to apply its local inequality, and the third to bound the series by $\\sqrt b\\le b$. The last line uses the family scale identities to apply the logarithmic inequality at the common $x$. This gives one constant $|C|+1$ for all members of the family and all lifts above the threshold.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/congruence-sha.md#L164-L167",
         "authors": [
           "Qui Vincit",
@@ -281,9 +281,9 @@
     ],
     "Formalism.LFunctionChainParameters.LChain.SizeData₂": [
       {
-        "title": "Where ChainTied gets the eleven clauses",
+        "title": "The eleven conditions on the numerical data",
         "markdown": "- [R] `ChainTied` (`GSB/TieGlobal.lean:97`) demands `LChain.SizeData₂ Dd C Xpp` (`SWB/SChain.lean:17`) `:= HidaSetting ∧ DIV ∧ EComp5 ∧ HComp ∧ Count5 ∧ Slopes ∧ QuotientSlopeBoundsWith ∧ LossBounds ∧ SlopeIneq ∧ HHBound ∧ FParams`.",
-        "reading_note": "Unfold this proposition to see the eleven clauses imposed on one chain datum at the chosen scale. ChainTied supplies them together, and each_unit_bound_statement uses them to bound ASK by the sum of a main term and an error for each outer index.",
+        "reading_note": "There are two declarations with the short name `SizeData₂`. The one in `BasicNotions` records the arithmetic data used to define the rescaled lattice; the one here in `LChain` is a conjunction of inequalities on numerical data `Dd`. In `TieLocal` the ranks, slopes, level primes, height bounds and finite-place sums of `Dd` are identified with those of the constructed lattices; `each_unit_bound_statement` needs only the eleven numerical hypotheses and gives $\\mathrm{ASK}(u_0)\\le\\mathrm{MAIN}(u_0)+\\mathrm{ErrX5at}(u_0)$ for each $u_0$. The identification with the analytic count and the bound on this explicit error are further conditions of the application.",
         "url": "https://github.com/vincitamore/riemann-lean-account/blob/dd9bfc30bf9fc605251a22aa41004d1e22cc303b/notes/slices/lattices.md#L8-L8",
         "authors": [
           "Qui Vincit",
